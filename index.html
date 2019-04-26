@@ -1,106 +1,329 @@
 <!DOCTYPE html>
-<html lang="en-US" prefix="og: http://ogp.me/ns#">
-    <head>
-        <title>Portfolio | Jesse van Leeuwen</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">  
 
-        <link rel="canonical" href="https://jessevanleeuwen.nl/">        
-	    <meta property="og:locale" content="en_US">
-        <meta property="og:type" content="website">
-        <meta property="og:description" content="">
-        <meta property="og:title" content="Portfolio | Jesse van Leeuwen">
-        <meta property="og:url" content="https://jessevanleeuwen.nl/">
-        <meta property="og:site_name" content="Portfolio Jesse van Leeuwen">
+<html>
+	<head>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/skeleton.css">
+		<link rel="stylesheet" href="css/animate.css">
 
-        <link rel="stylesheet" 
-            href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
-            integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" 
-            crossorigin="anonymous">
+		<link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-        <link rel='stylesheet' href="css/typography.min.css">
-        <link rel='stylesheet' href="css/main.min.css">
-        <link rel='stylesheet' media="screen and (min-width: 720px)" href="css/layout.min.css">
+		<style>
 
-        <script src="js/vue.min.js"></script>
-    </head>
-    <body>
-        <div id="app">
-            <header class="noMargin header card"> 
-                <img src="Images/Jesse.jpg" />
-                <p v-html="text"> </p>
-            </header>
-            
-            <main class="main-content">
 
-                <h3 class="center">About Me</h3>
-                <div v-if="story != ''" class="center card">
-                    <p class="center" style="padding: 15px;" v-html="story"></p>
-                </div>
+			a:link,
+			a:link:active,
+			a:visited,
+			a:visited:active {
+				color: #1EAEDB;
+			}
 
-                <h3 class="center">Work Experience</h3>
-                <div class="center card Resume">
-                    <div class="work center" v-for="work in workExperience">
-                        <h4 class="noMargin">{{work.function}}</h4>
-                        <small><i class="far fa-calendar-alt dateIcon"></i>{{work.date}}</small>
-                        <p>{{work.description}}</p>
-                        <small><a v-if="work.link != ''" :href="work.link">project link</a></small>
-                    </div>
-                </div>
+			.header {
+				text-transform: uppercase;
+				font-size: 1.4rem;
+				letter-spacing: .2rem;
+				font-weight: 600;
+			}
 
-                <h3 class="center" v-if="projects.length > 0">Personal Projects</h3>
-                <div class="project-list center" v-if="projects.length > 0">
-                    <a v-for="project in projects" :href="project.link" target="_blank">
-                        <div class="project">
-                            <img class="project-img" :src="project.img" />
-                            <div>
-                                <h3 class="project-title">{{project.name}}</h3>
-                                <p class="project-desc">
-                                    <small>{{project.tagline}}</small><br/><br/>
-                                    {{ project.description }}
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </main>
+			.homeCard{				
+				margin-bottom: 16px;
+			}
 
-            <aside class="skills">
-                <h4 class="noMargin centerText">programming languages:</h4>
-                <div v-for="skill in skills.languages">
-                    <label class="skillName">{{skill.name}}</label>
-                    <div class="skillBack"><!-- skill background -->
-                        <div class="skill yellowBack" 
-                            v-bind:style="{width: skill.width }"></div>
-                    </div>
-                </div>
-                
-                <br/>
-                
-                <h4 class="noMargin centerText">programs en libaries:</h4>
-                <div v-for="skill in skills.programs">
-                    <label class="skillName">{{skill.name}}</label>
-                    <div class="skillBack"><!-- skill background -->
-                        <div class="skill yellowBack" 
-                            v-bind:style="{width: skill.width }"></div>
-                    </div>
-                </div>
-            </aside>
+			.tile > img{
+				width: 100%;
+			}
 
-            <footer class="footer">
-                <small><a target="_blank" href="privacy.html">Privacy Policy</a></small>
-                <a class="contact font-heavy" href="mailto:jesse@emberglitch.com"><div>
-                    contact
-                </div></a>
-                <small>&copy; Copyright 2018, Jesse van Leeuwen</small>
-                <a target="_blank" href="https://twitter.com/jesseGameDev">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a target="_blank" href="https://www.linkedin.com/in/jesse-van-leeuwen-00a90bb6/">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </footer>
-        </div>
-        <script src="js/app.min.js"></script>
-    </body>
+			.center-text{
+				text-align: center;
+			}
+
+			.section{
+				position: relative;
+				width: 80%;
+				max-width: 860px;
+				left: 50%;
+				margin-bottom: 60px;
+				transform: translate(-50%, 0);
+			}
+
+			.resumeItem{
+				position: relative;
+				padding-left: 32px;
+				padding-bottom: 16px;
+				border-left: 3px solid #0FA0CE;
+				margin-left: 24px;
+			}
+
+			.resumeItem:last-child{
+				border: none;
+				margin-left: 26px;
+			}
+
+			.resumeItem::before{
+			   	content: '';
+			   	display: inline-block;
+				position: absolute;
+				width: 40px;
+				height: 40px;
+				top: 0;
+				left: -24px;
+
+			   	-moz-border-radius: 50px;
+			   	-webkit-border-radius: 50px;
+			   	border-radius: 50px;
+				background-color: #FFF;
+				border: 2px solid #0FA0CE;   
+			}
+			
+			.education::before{
+				text-align: center;
+				line-height: 53px;
+				content: url(https://img.icons8.com/wired/24/000000/diploma.png);
+			}
+			
+			.work::before{
+				text-align: center;
+				line-height: 55px;
+				content: url(https://img.icons8.com/wired/24/000000/under-computer.png);
+			}
+
+			.skillSection{
+				padding: 8px;
+			}
+
+			.progress::before{
+				content: "100%";
+				display: inline-block;
+				position: relative;
+				top: 0px;
+				width: 98%;
+				height: 70%;
+				background: #1EAEDB;
+				border-radius: 16px;
+				line-height: 100%;			
+			}
+
+			.progress{
+				text-align: center;
+				object-fit: cover;
+				width: 100%;
+				background: #eee;
+				height: 24px;				
+				border-radius: 16px;
+			}
+
+			.noMargin{
+				margin: 0;
+			}
+
+			.footer {
+				grid-area: info;
+				display: grid;
+				align-items: center;
+				justify-items: center;
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: 1fr 1fr
+			}
+
+			.footer>small {
+				margin-right: 5%
+			}
+
+
+			#home{
+				padding-top: 50px;
+				display: grid;
+				grid-gap: 8px;
+				grid-template-columns: 1fr 1fr;
+			}
+
+			#MyFace{
+				position: relative;
+				object-fit:scale-down;
+				width: 100%;
+				max-height: 100%;
+			}
+
+			#work{
+				display: grid;
+  				grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+				grid-template-rows: 64px 1fr;
+				grid-column-gap: 16px;
+			}
+
+			#workIntro{
+				margin-bottom: 0px;
+				grid-column: 1 / -1;
+			}
+
+			#resume{
+				display: grid;
+				grid-template-areas: 
+					"exp exp"
+					"skT skT"
+					"sk1 sk2"
+			}
+
+			#experience{
+				grid-area: exp;
+			}
+
+			#skills1{ grid-area: sk1; }
+			#skills2{ grid-area: sk2; }
+			
+		</style>
+	</head>
+	<body>
+
+		<div id="home" class="section">
+			<img id="MyFace" src="https://emberglitch.com/wp-content/uploads/Jesse_working.jpg">
+			<div> 
+				<h3 class="homeCard"> Hi, my name is Jesse van Leeuwen </h3>
+				<p class="homeCard">
+				I'm a game programmer at Ember Glitch. 
+				Ember Glitch is a game studio situated in Utrecht, The Netherlands. 
+				My work consists of realising and designing game mechanics and systems. 
+				
+				I graduated the Grafisch Lyceum Utrecht in 2017 as game developer. I started programming to be able to work on different kind of projects from entertainment games to interactive game experiences and work with all kind of creative people from different industries 
+				</p>
+			</div>
+		</div>
+		<div id="work" class="section">
+			<div id="workIntro">
+				<h3>My work</h3>		
+			</div>
+			<div class="tile">
+				<img src="http://via.placeholder.com/150">
+				<h6 class="header">title of project</h6>
+				<p>
+					Description of the project
+				</p>
+			</div>
+			
+			<div class="tile">
+				<img src="http://via.placeholder.com/150">
+				<h6 class="header">title of project</h6>
+				<p>
+					Description of the project
+				</p>
+			</div>
+			
+			<div class="tile">
+				<img src="http://via.placeholder.com/150">
+				<h6 class="header">title of project</h6>
+				<p>
+					Description of the project
+				</p>
+			</div>
+
+			<div class="tile">
+				<img src="http://via.placeholder.com/150">
+				<h6 class="header">title of project</h6>
+				<p>
+					Description of the project
+				</p>
+			</div>
+			<div class="tile">
+					<img src="http://via.placeholder.com/150">
+					<h6 class="header">title of project</h6>
+					<p>
+						Description of the project
+					</p>
+			</div>				
+		</div>
+
+		<div id="resume" class="section">
+			<div id="experience">
+				<div style="margin-bottom: 16px;">
+					<h3> My experience </h3>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, odit? Quisquam maiores suscipit laborum nobis fugiat similique id distinctio, hic quae illo sequi velit nisi voluptates nihil optio labore? Earum.
+				</div>
+				<div class="resumeItem education"> 
+					<h6 class="noMargin header">MBO-4 Game developer - Grafisch Lyceaum Utrecht </h6>
+					<small><i class="far fa-calendar-alt dateIcon"></i> sept 2013 - jun 2017</small>
+				</div>
+				<div class="resumeItem work"> 
+					<h6 class="noMargin header">(Intership) game programmer - Hibernate studios</h6>
+					<small><i class="far fa-calendar-alt dateIcon"></i> feb 2016 - jun 2016</small> | <small><a href="https://hibernatestudios.com">project link</a></small>
+					<p>worked on Rumble Run</p> 
+					
+				</div>
+				<div class="resumeItem work"> 
+					<h6 class="noMargin header">(Intership) game programmer - Monobanda-PLAY</h6>
+					<small><i class="far fa-calendar-alt dateIcon"></i> sept 2016 - dec 2016</small> | <small><a href="http://www.weltatem.eu">project link</a></small>
+					<p>worked on Weltatem VR</p> 
+				</div>
+				<div class="resumeItem work"> 
+					<h6 class="noMargin header">Game programmer - Monobanda-PLAY</h6>
+					<small><i class="far fa-calendar-alt dateIcon"></i> dec 2016 - jun 2017</small> | <small><a href="http://monobanda.eu/project/timbre">project link</a></small>
+					<p>worked on Timbre VR, researched possible interaction with voice control</p>
+					
+				</div>
+				<div class="resumeItem work"> 
+					<h6 class="noMargin header">Game programmer - Monobanda-PLAY</h6>
+					<small><i class="far fa-calendar-alt dateIcon"></i> dec 2017 - apr 2018</small> 
+					<p>worked as Game programmer on Timbre in de klas. My function was to create the main loop and gameplay mechanics</p> 
+				</div>
+				<div class="resumeItem work"> 
+					<h6 class="noMargin header">Game programmer / co-owner - Ember Glitch</h6>
+					<small><i class="far fa-calendar-alt dateIcon"></i> oct 2017 - heden</small> | <small><a href="https://emberglitch.com">project link</a></small>
+					<p>Working on our own projects as the lead programmer. current project is ToppieTopo</p> 
+					
+				</div>		
+			</div>
+			
+			<h3 style="grid-area: skT">My skills</h3>
+			<div id="skills1" class="skillSection">
+				<div> c# 
+					<div class="progress"></div>
+				</div>
+				<div> c++
+					<div class="progress"></div>
+				</div>
+				<div> javascript
+					<div class="progress"></div>
+				</div>
+				<div> html/css 
+					<div class="progress"></div>
+				</div>
+				<div> Python 
+					<div class="progress"></div>
+				</div>
+				<div> CG 
+					<div class="progress"></div>
+				</div>
+			</div>
+			<div id="skills2" class="skillSection">
+				<div> Unity 
+					<div class="progress"></div>
+				</div>
+				<div> Unreal
+					<div class="progress"></div>
+				</div>
+				<div> Blender
+					<div class="progress"></div>
+				</div>
+				<div> Vuejs
+					<div class="progress"></div>
+				</div>
+				<div> .NET
+					<div class="progress"></div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer section">
+			<small><a target="_blank" href="privacy.html">Privacy Policy</a></small> 
+			<a href="mailto:jesse@emberglitch.com" class="contact font-heavy">
+				<button class="button-primary">contact</button>
+			</a> 
+			<a target="_blank" href="sitemap.xml"> sitemap </a>
+			<a target="_blank" href="https://twitter.com/jesseGameDev">
+				<i class="fab fa-twitter"></i>
+			</a> 
+			<small>© Copyright 2018, Jesse van Leeuwen</small> 
+			<a target="_blank" href="https://www.linkedin.com/in/jesse-van-leeuwen-00a90bb6/"><i class="fab fa-linkedin-in"></i></a>
+		</footer>
+	</body>
 </html>
