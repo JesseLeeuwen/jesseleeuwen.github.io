@@ -2,204 +2,89 @@
 
 <html>
 	<head>
+
+		<!--stylesheets -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/skeleton.css">
 		<link rel="stylesheet" href="css/animate.css">
 
+		<!--fonts -->
 		<link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-		<style>
+    <script
+    src="https://code.jquery.com/jquery-3.4.0.min.js"
+    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+    crossorigin="anonymous"></script>
 
-
-			a:link,
-			a:link:active,
-			a:visited,
-			a:visited:active {
-				color: #1EAEDB;
-			}
-
-			.header {
-				text-transform: uppercase;
-				font-size: 1.4rem;
-				letter-spacing: .2rem;
-				font-weight: 600;
-			}
-
-			.homeCard{				
-				margin-bottom: 16px;
-			}
-
-			.tile > img{
-				width: 100%;
-			}
-
-			.center-text{
-				text-align: center;
-			}
-
-			.section{
-				position: relative;
-				width: 80%;
-				max-width: 860px;
-				left: 50%;
-				margin-bottom: 60px;
-				transform: translate(-50%, 0);
-			}
-
-			.resumeItem{
-				position: relative;
-				padding-left: 32px;
-				padding-bottom: 16px;
-				border-left: 3px solid #0FA0CE;
-				margin-left: 24px;
-			}
-
-			.resumeItem:last-child{
-				border: none;
-				margin-left: 26px;
-			}
-
-			.resumeItem::before{
-			   	content: '';
-			   	display: inline-block;
-				position: absolute;
-				width: 40px;
-				height: 40px;
-				top: 0;
-				left: -24px;
-
-			   	-moz-border-radius: 50px;
-			   	-webkit-border-radius: 50px;
-			   	border-radius: 50px;
-				background-color: #FFF;
-				border: 2px solid #0FA0CE;   
-			}
-			
-			.education::before{
-				text-align: center;
-				line-height: 53px;
-				content: url(https://img.icons8.com/wired/24/000000/diploma.png);
-			}
-			
-			.work::before{
-				text-align: center;
-				line-height: 55px;
-				content: url(https://img.icons8.com/wired/24/000000/under-computer.png);
-			}
-
-			.skillSection{
-				padding: 8px;
-			}
-
-			.progress::before{
-				content: "100%";
-				display: inline-block;
-				position: relative;
-				top: 0px;
-				width: 98%;
-				height: 70%;
-				background: #1EAEDB;
-				border-radius: 16px;
-				line-height: 100%;			
-			}
-
-			.progress{
-				text-align: center;
-				object-fit: cover;
-				width: 100%;
-				background: #eee;
-				height: 24px;				
-				border-radius: 16px;
-			}
-
-			.noMargin{
-				margin: 0;
-			}
-
-			.footer {
-				grid-area: info;
-				display: grid;
-				align-items: center;
-				justify-items: center;
-				grid-template-columns: repeat(3, 1fr);
-				grid-template-rows: 1fr 1fr
-			}
-
-			.footer>small {
-				margin-right: 5%
-			}
-
-
-			#home{
-				padding-top: 50px;
-				display: grid;
-				grid-gap: 8px;
-				grid-template-columns: 1fr 1fr;
-			}
-
-			#MyFace{
-				position: relative;
-				object-fit:scale-down;
-				width: 100%;
-				max-height: 100%;
-			}
-
-			#work{
-				display: grid;
-  				grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-				grid-template-rows: 64px 1fr;
-				grid-column-gap: 16px;
-			}
-
-			#workIntro{
-				margin-bottom: 0px;
-				grid-column: 1 / -1;
-			}
-
-			#resume{
-				display: grid;
-				grid-template-areas: 
-					"exp exp"
-					"skT skT"
-					"sk1 sk2"
-			}
-
-			#experience{
-				grid-area: exp;
-			}
-
-			#skills1{ grid-area: sk1; }
-			#skills2{ grid-area: sk2; }
-			
-		</style>
+    <!-- Carousel -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <!-- page style -->
+		<link rel="stylesheet" href="css/main.css"/>
 	</head>
 	<body>
 
 		<div id="home" class="section">
 			<img id="MyFace" src="https://emberglitch.com/wp-content/uploads/Jesse_working.jpg">
-			<div> 
-				<h3 class="homeCard"> Hi, my name is Jesse van Leeuwen </h3>
-				<p class="homeCard">
+			<h3 class="homeCard"> Hi, my name is Jesse van Leeuwen </h3>
+			<p class="homeCard">
 				I'm a game programmer at Ember Glitch. 
 				Ember Glitch is a game studio situated in Utrecht, The Netherlands. 
 				My work consists of realising and designing game mechanics and systems. 
 				
 				I graduated the Grafisch Lyceum Utrecht in 2017 as game developer. I started programming to be able to work on different kind of projects from entertainment games to interactive game experiences and work with all kind of creative people from different industries 
-				</p>
+			</p>
+
+			<div>
+        <a href="#home">Home</a> <a href="#work">Work</a> <a href="#resume">Resume</a>
 			</div>
 		</div>
 		<div id="work" class="section">
 			<div id="workIntro">
 				<h3>My work</h3>		
-			</div>
-			<div class="tile">
-				<img src="http://via.placeholder.com/150">
-				<h6 class="header">title of project</h6>
-				<p>
-					Description of the project
-				</p>
-			</div>
+			</div>		
+			
+			<div class="car" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+        <div><h3>1</h3></div>
+        <div><h3>2</h3></div>
+        <div><h3>3</h3></div>
+        <div><h3>4</h3></div>
+        <div><h3>5</h3></div>
+        <div><h3>6</h3></div>
+      </div>
+      <script>
+        $(document).ready(()=>{
+          
+$('.car').slick({
+  centerMode: true,
+  centerPadding: '60px',
+  slidesToShow: 3,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+        })
+      </script>
+      
 			
 			<div class="tile">
 				<img src="http://via.placeholder.com/150">
@@ -207,29 +92,6 @@
 				<p>
 					Description of the project
 				</p>
-			</div>
-			
-			<div class="tile">
-				<img src="http://via.placeholder.com/150">
-				<h6 class="header">title of project</h6>
-				<p>
-					Description of the project
-				</p>
-			</div>
-
-			<div class="tile">
-				<img src="http://via.placeholder.com/150">
-				<h6 class="header">title of project</h6>
-				<p>
-					Description of the project
-				</p>
-			</div>
-			<div class="tile">
-					<img src="http://via.placeholder.com/150">
-					<h6 class="header">title of project</h6>
-					<p>
-						Description of the project
-					</p>
 			</div>				
 		</div>
 
@@ -318,11 +180,11 @@
 			<a href="mailto:jesse@emberglitch.com" class="contact font-heavy">
 				<button class="button-primary">contact</button>
 			</a> 
-			<a target="_blank" href="sitemap.xml"> sitemap </a>
+			<small><a target="_blank" href="sitemap.xml"> sitemap </a></small>
 			<a target="_blank" href="https://twitter.com/jesseGameDev">
 				<i class="fab fa-twitter"></i>
 			</a> 
-			<small>© Copyright 2018, Jesse van Leeuwen</small> 
+			<small>Copyright 2018, Jesse van Leeuwen</small> 
 			<a target="_blank" href="https://www.linkedin.com/in/jesse-van-leeuwen-00a90bb6/"><i class="fab fa-linkedin-in"></i></a>
 		</footer>
 	</body>
