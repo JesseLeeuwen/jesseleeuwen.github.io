@@ -1,352 +1,172 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<!--stylesheets -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/skeleton.css">
-		<link rel="stylesheet" href="css/animate.css">
+    <head>
+        <meta charset="UTF-8">
+        <!--stylesheets -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/skeleton.css">
+        <link rel="stylesheet" href="css/animate.css">
 
-		<!--fonts -->
-		<link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <!--fonts -->
+        <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-		<script
-		src="https://code.jquery.com/jquery-3.4.0.min.js"
-		integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
-		crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/devicon.css">
 
-		<!-- Carousel -->
-		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-	
-		<!-- page style -->
-		<link rel="stylesheet" href="css/main.css"/>
-		
-		<style>
-			.car{
-				width: 90%;
-				margin: 0px auto;
-				
-				line-height: 1em;
-    			font-size: 1em;			
-			}
+        <script
+        src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+        crossorigin="anonymous"></script>
 
-			.slick-slide{			
-				margin:10px;
-				
-			}
+        <!-- Carousel -->
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 
-			.slick-slide img{
-				width:100%;	
+        <!-- page style -->
+        <link rel="stylesheet" href="css/main.css"/>
 
-				opacity: 0.8;
-				transition: all 200ms ease;
-			}
+        <style>
+       
+        </style>
 
-			.slick-center img{
-				outline: 5px solid #33C3F0;
-				opacity: 1;
-			}
+    </head>
+    <body>
+        <div id="app">
+            <div id="home" class="section">
+                <div>
+                    <h3 class="homeCard"> Hi, my name is Jesse van Leeuwen </h3>
+                    <div>
+                        <a href="#home">About</a> 
+                        <a href="#work" class="invis" v-if="projects.length > 0" >Work</a> 
+                        <a href="#resume">Experience</a>
+                        <a href="#skills">Skills</a>
+                    </div>
+                </div>
 
-			.slick-arrow{
-				width: 32px;
-				height: 32px;
-			}
-			.slick-prev{ left: -36px; }
-			.slick-next{ right: -38px; }
+                <img id="MyFace" src="https://emberglitch.com/wp-content/uploads/Jesse_working.jpg">
 
-			.slick-prev::before, .slick-next::before{
-				color: #33C3F0;
-				font-size: 30px;
-			}
+                <p class="homeCard">
+                I'm a game programmer at Ember Glitch. 
+                Ember Glitch is a game studio situated in Utrecht, The Netherlands. 
+                My work consists of realising and designing game mechanics and systems. 
 
-			.detail {
-				position: relative;
-			}
+                I graduated the Grafisch Lyceum Utrecht in 2017 as game developer. I started programming to be able to work on different kind of projects from entertainment games to interactive game experiences and work with all kind of creative people from different industries 
+                </p>		
+            </div>
+            <div id="work" class="section invis" v-if="projects.length > 0" >
+                <div id="workIntro">
+                    <h3>My work</h3>		
+                </div>		
 
-			.detail img{
-				width: 100%;
-			}
+                <div class="car">
+                    <div><img src="http://via.placeholder.com/150"></div>
+                    <div><img src="http://via.placeholder.com/150"></div>
+                    <div><img src="http://via.placeholder.com/150"></div>
+                    <div><img src="http://via.placeholder.com/150"></div>
+                    <div><img src="http://via.placeholder.com/150"></div>
+                    <div><img src="http://via.placeholder.com/150"></div>
+                </div>
+                        
+                <div class="detail">
+                    <h4>title of project</h4>
+                    <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat repudiandae exercitationem dicta doloremque libero voluptates quasi necessitatibus commodi, impedit ex illo incidunt cumque nemo accusantium, maxime dolore dignissimos quae expedita! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat rerum cum ratione reprehenderit maxime reiciendis eligendi obcaecati, minima nemo. Totam accusamus animi fugiat quasi corporis, earum incidunt facilis itaque quisquam. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus animi velit, alias adipisci ipsa illum exercitationem ipsum. Recusandae odio pariatur ullam facere sit expedita inventore iusto aspernatur, dolorum autem nemo.
+                    </p>
+                    <img src="http://via.placeholder.com/720x350">
+                </div>				
+            </div>
 
-			.list{
-				position: relative;
-				display: inline-block;
-				left: 50%;
-				transform: translate(-50%,0);
-			}
+            <div id="resume" class="section">
+                <div id="experience">
+                    <div style="margin-bottom: 16px;">
+                        <h3> My experience </h3>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, odit? Quisquam maiores suscipit laborum nobis fugiat similique id distinctio, hic quae illo sequi velit nisi voluptates nihil optio labore? Earum.
+                    </div>       
+                    <!-- education -->             
+                    <div class="resumeItem education wow fadeInUp" data-wow-delay="0.1s"> 
+                        <h6 class="noMargin header">MBO-4 Game developer - Grafisch Lyceaum Utrecht </h6>
+                        <small><i class="far fa-calendar-alt dateIcon"></i> sept 2013 - jun 2017</small>
+                    </div>
+                    
+                    <!-- work -->
+                    <div class="resumeItem work wow fadeInUp" data-wow-delay="0.1s" v-for="xp in workExperience.slice().reverse()">
+                        <h6 class="noMargin header">{{xp.function}}</h6>
+                        <small><i class="far fa-calendar-alt dateIcon"></i> {{xp.date}}</small> | <small v-if="xp.link"><a :href="xp.link">project link</a></small>
+                        <p>{{xp.description}}</p> 
+                    </div>	
+                </div>
 
-			/* Tooltip container */
-			.tooltip {
-				position: relative;
-				display: inline-block;
-				margin-bottom: 30px;
-			}
+                <h3 id="skills" style="grid-area: skT">My skills</h3>
+                <div id="skills1" class="skillSection">	
+                    <h6 class="header"> programming langauges </h6>
+                    <div class="list">
+                        <div class="tooltip wow bounceInLeft" v-for="l in skills.languages">
+                            <i :class="l.icon"></i>
+                            <span class="tooltiptext">{{l.skill}}</span>
+                            <div class="progress" :class="l.skill"></div>
+                        </div>	
+                    </div>
+                </div>
+                
+                <div id="skills2" class="skillSection ">
+                    <h6 class="header"> programs and tools </h6>
+                    <div class="list">
+                        <div class="tooltip wow bounceInRight" v-for="l in skills.tools">
+                            <i :class="l.icon"></i>
+                            <span v-if="l.skill" class="tooltiptext">{{l.skill}}</span>
+                            <div v-if="l.skill" class="progress" :class="l.skill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end resume -->
 
-			/* Tooltip text */
-			.tooltip .tooltiptext {
-				visibility: hidden;
-				width: 96px;
-				background-color: #33C3F0;
-				color: #fff;
-				text-align: center;
-				padding: 5px 0;
-				border-radius: 4px;
-
-				/* Position the tooltip text */
-				position: absolute;
-				z-index: 1;
-				top: 95%;
-				left: 50%;
-				margin-left: -48px;
-
-				/* Fade in tooltip */
-				opacity: 0;
-				transition: opacity 0.3s;
-			}
-
-			/* Show the tooltip text when you mouse over the tooltip container */
-			.tooltip:hover .tooltiptext {
-				visibility: visible;
-				opacity: 1;
-			}
-
-			.tooltip .level {
-				overflow: visible;
-				white-space: nowrap; /* fixes line wrap */
-				position: absolute;
-				top: 95%;
-				left: 50%;
-				color: #33C3F0;
-				transform: translate(-50%, 0);
-			}
-
-		</style>
-
-	</head>
-	<body>
-
-		<div id="home" class="section">
-			<div>
-				<h3 class="homeCard"> Hi, my name is Jesse van Leeuwen </h3><br/>
-				<div>
-					<a href="#home">Home</a> 
-					<a href="#work">Work</a> 
-					<a href="#resume">Resume</a>
-				</div>
-			</div>
-			
-			<img id="MyFace" src="https://emberglitch.com/wp-content/uploads/Jesse_working.jpg">
-			
-			<p class="homeCard">
-				I'm a game programmer at Ember Glitch. 
-				Ember Glitch is a game studio situated in Utrecht, The Netherlands. 
-				My work consists of realising and designing game mechanics and systems. 
-				
-				I graduated the Grafisch Lyceum Utrecht in 2017 as game developer. I started programming to be able to work on different kind of projects from entertainment games to interactive game experiences and work with all kind of creative people from different industries 
-			</p>		
-		</div>
-		<div id="work" class="section">
-			<div id="workIntro">
-				<h3>My work</h3>		
-			</div>		
-			
-			<div class="car">
-				<div><img src="http://via.placeholder.com/150"></div>
-				<div><img src="http://via.placeholder.com/150"></div>
-				<div><img src="http://via.placeholder.com/150"></div>
-				<div><img src="http://via.placeholder.com/150"></div>
-				<div><img src="http://via.placeholder.com/150"></div>
-				<div><img src="http://via.placeholder.com/150"></div>
-			</div>
-			<script type="text/javascript" src="slick/slick.min.js"></script>
-			<script>
-				$(document).ready(()=>{          
-					$('.car').slick({
-						centerMode: true,
-						centerPadding: '60px',
-						slidesToShow: 3,
-						responsive: [
-							{
-							breakpoint: 768,
-							settings: {
-								arrows: false,
-								centerMode: true,
-								centerPadding: '40px',
-								slidesToShow: 3
-							}
-							},
-							{
-							breakpoint: 480,
-							settings: {
-								arrows: false,
-								centerMode: true,
-								centerPadding: '40px',
-								slidesToShow: 1
-							}
-							}
-						]
-					});	
-				});
-			</script>			
-			<div class="detail">
-				<h4>title of project</h4>
-				<p>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat repudiandae exercitationem dicta doloremque libero voluptates quasi necessitatibus commodi, impedit ex illo incidunt cumque nemo accusantium, maxime dolore dignissimos quae expedita! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat rerum cum ratione reprehenderit maxime reiciendis eligendi obcaecati, minima nemo. Totam accusamus animi fugiat quasi corporis, earum incidunt facilis itaque quisquam. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus animi velit, alias adipisci ipsa illum exercitationem ipsum. Recusandae odio pariatur ullam facere sit expedita inventore iusto aspernatur, dolorum autem nemo.
-				</p>
-				<img src="http://via.placeholder.com/720x350">
-			</div>				
-		</div>
-
-		<div id="resume" class="section">
-			<div id="experience">
-				<div style="margin-bottom: 16px;">
-					<h3> My experience </h3>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, odit? Quisquam maiores suscipit laborum nobis fugiat similique id distinctio, hic quae illo sequi velit nisi voluptates nihil optio labore? Earum.
-				</div>
-				<div class="resumeItem education"> 
-					<h6 class="noMargin header">MBO-4 Game developer - Grafisch Lyceaum Utrecht </h6>
-					<small><i class="far fa-calendar-alt dateIcon"></i> sept 2013 - jun 2017</small>
-				</div>
-				<div class="resumeItem work"> 
-					<h6 class="noMargin header">(Intership) game programmer - Hibernate studios</h6>
-					<small><i class="far fa-calendar-alt dateIcon"></i> feb 2016 - jun 2016</small> | <small><a href="https://hibernatestudios.com">project link</a></small>
-					<p>worked on Rumble Run</p> 
-					
-				</div>
-				<div class="resumeItem work"> 
-					<h6 class="noMargin header">(Intership) game programmer - Monobanda-PLAY</h6>
-					<small><i class="far fa-calendar-alt dateIcon"></i> sept 2016 - dec 2016</small> | <small><a href="http://www.weltatem.eu">project link</a></small>
-					<p>worked on Weltatem VR</p> 
-				</div>
-				<div class="resumeItem work"> 
-					<h6 class="noMargin header">Game programmer - Monobanda-PLAY</h6>
-					<small><i class="far fa-calendar-alt dateIcon"></i> dec 2016 - jun 2017</small> | <small><a href="http://monobanda.eu/project/timbre">project link</a></small>
-					<p>worked on Timbre VR, researched possible interaction with voice control</p>
-					
-				</div>
-				<div class="resumeItem work"> 
-					<h6 class="noMargin header">Game programmer - Monobanda-PLAY</h6>
-					<small><i class="far fa-calendar-alt dateIcon"></i> dec 2017 - apr 2018</small> 
-					<p>worked as Game programmer on Timbre in de klas. My function was to create the main loop and gameplay mechanics</p> 
-				</div>
-				<div class="resumeItem work"> 
-					<h6 class="noMargin header">Game programmer / co-owner - Ember Glitch</h6>
-					<small><i class="far fa-calendar-alt dateIcon"></i> oct 2017 - heden</small> | <small><a href="https://emberglitch.com">project link</a></small>
-					<p>Working on our own projects as the lead programmer. current project is ToppieTopo</p> 
-					
-				</div>		
-			</div>
-			
-			<h3 style="grid-area: skT">My skills</h3>
-			<div id="skills1" class="skillSection">				
-				<h6 class="header"> programming langauges </h6>
-				<div class="list">
-					<div class="tooltip">
-						<img src="http://via.placeholder.com/96" />
-						<span class="tooltiptext">Tooltip text</span>
-						<div class="level">
-							<i class="fas fa-star"></i>
-							<i class="fas fa-star"></i>
-							
-						</div>
-					</div>
-					<div class="tooltip">
-						<img src="http://via.placeholder.com/96" />
-						<span class="tooltiptext">Tooltip text</span>
-						<div class="level">
-							<i class="fas fa-star"></i>							
-						</div>
-					</div>
-					<div class="tooltip">
-						<img src="http://via.placeholder.com/96" />
-						<span class="tooltiptext">Tooltip text</span>
-						<div class="level">
-							<i class="fas fa-star"></i>
-							<i class="fas fa-star"></i>
-						</div>
-					</div>
-					<br/>
-					<div class="tooltip">
-						<img src="http://via.placeholder.com/96" />
-						<span class="tooltiptext">Tooltip text</span>
-						<div class="level">
-							<i class="fas fa-star"></i>
-							<i class="fas fa-star"></i>								
-						</div>
-					</div>
-					<div class="tooltip">
-						<img src="http://via.placeholder.com/96" />
-						<span class="tooltiptext">Tooltip text</span>
-						<div class="level">
-							<i class="fas fa-star"></i>
-						</div>
-					</div>
-					<div class="tooltip">
-						<img src="http://via.placeholder.com/96" />
-						<span class="tooltiptext">Tooltip text</span>
-						<div class="level">
-							<i class="fas fa-star"></i>
-							<i class="fas fa-star"></i>
-							<i class="fas fa-star"></i>								
-						</div>
-					</div>					
-				</div>				
-				
-				
-				
-				
-				
-				<!--div> c# 
-					<div class="progress"></div>
-				</div>
-				<div> c++
-					<div class="progress"></div>
-				</div>
-				<div> javascript
-					<div class="progress"></div>
-				</div>
-				<div> html/css 
-					<div class="progress"></div>
-				</div>
-				<div> Python 
-					<div class="progress"></div>
-				</div>
-				<div> CG 
-					<div class="progress"></div>
-				</div-->
-			</div>
-			<div id="skills2" class="skillSection">
-				<div> Unity 
-					<div class="progress"></div>
-				</div>
-				<div> Unreal
-					<div class="progress"></div>
-				</div>
-				<div> Blender
-					<div class="progress"></div>
-				</div>
-				<div> Vuejs
-					<div class="progress"></div>
-				</div>
-				<div> .NET
-					<div class="progress"></div>
-				</div>
-			</div>
-		</div>
-
-		<footer class="footer section">
-			<small><a target="_blank" href="privacy.html">Privacy Policy</a></small> 
-			<a href="mailto:jesse@emberglitch.com" class="contact font-heavy">
-				<button class="button-primary">contact</button>
-			</a> 
-			<small><a target="_blank" href="sitemap.xml"> sitemap </a></small>
-			<a target="_blank" href="https://twitter.com/jesseGameDev">
-				<i class="fab fa-twitter"></i>
-			</a> 
-			<small>Copyright 2018, Jesse van Leeuwen</small> 
-			<a target="_blank" href="https://www.linkedin.com/in/jesse-van-leeuwen-00a90bb6/"><i class="fab fa-linkedin-in"></i></a>
-		</footer>
-	</body>
+            <footer class="footer section">
+                <small><a target="_blank" href="privacy.html">Privacy Policy</a></small> 
+                <a href="mailto:jesse@emberglitch.com" class="contact font-heavy">
+                    <button class="button-primary">contact</button>
+                </a> 
+                <small><a target="_blank" href="sitemap.xml"> sitemap </a></small>
+                <a target="_blank" href="https://twitter.com/jesseGameDev">
+                    <i class="fab fa-twitter"></i>
+                </a> 
+                <small>Copyright 2018, Jesse van Leeuwen</small> 
+                <a target="_blank" href="https://www.linkedin.com/in/jesse-van-leeuwen-00a90bb6/"><i class="fab fa-linkedin-in"></i></a>
+            </footer>
+        </div> <!-- end app -->
+        <script type="text/javascript" src="slick/slick.min.js"></script>
+        <script type="text/javascript" src="js/vue.min.js"></script>
+        <script type="text/javascript" src="js/app.min.js"></script>
+        <script type="text/javascript" src="js/wow.min.js"></script>
+        <script>
+        // init wow
+        new WOW().init();
+                
+        $('.car').slick({
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });	
+        </script>	
+    </body>
 </html>
