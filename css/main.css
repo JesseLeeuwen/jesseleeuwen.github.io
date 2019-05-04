@@ -87,7 +87,7 @@ a:visited:active {
   position: relative;
   padding-left: 32px;
   padding-bottom: 16px;
-  border-left: 3px solid #0FA0CE;
+  border-left: 3px solid #33C3F0;
   margin-left: 24px;
 }
 
@@ -97,31 +97,39 @@ a:visited:active {
 }
 
 .resumeItem::before{
-  content: '';
-  display: inline-block;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  top: 0;
-  left: -24px;
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    left: -24px;
 
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
-  background-color: #FFF;
-  border: 2px solid #0FA0CE;   
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    background-color: #FFF;
+    border: 2px solid #33C3F0;   
+    
+    color: #33C3F0;
+    
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
 }
 
 .education::before{
-  text-align: center;
-  line-height: 53px;
-  content: url(https://img.icons8.com/wired/24/000000/diploma.png);
+  content: "\f19d";
 }
 
 .work::before{
-  text-align: center;
-  line-height: 55px;
-  content: url(https://img.icons8.com/wired/24/000000/under-computer.png);
+  content: '\f0b1';
 }
 
 .skillSection{
