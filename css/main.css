@@ -1,5 +1,5 @@
-body{
-  overflow-x: hidden;
+#app{
+    overflow-x: hidden;
 }
 
 html {
@@ -11,7 +11,7 @@ a:visited,
 a:visited:active {
   color: #1EAEDB;
  }
- 
+
  
  .icon8-unity3d {
     display: inline-block;
@@ -62,9 +62,7 @@ a:visited:active {
   font-weight: 600;
 }
 
-.homeCard{				
-  margin-bottom: 0px;
-}
+.homeCard{}
 
 .tile > img{
   width: 100%;
@@ -189,21 +187,67 @@ expert-level::before{
 
  .car{
     width: 90%;
+    max-width: 700px;
     margin: 0px auto;
 
     line-height: 1em;
-    font-size: 1em;			
+    font-size: 1em;
+    
+    max-height: 300px;
+    background: #fff url('../slick/ajax-loader.gif') center 30% no-repeat;
+}
+
+.slick-slide img{ width: 100%; }
+
+@media (min-width: 800px) {
+    .slick-slide img{
+        height:100%;
+        width: auto;
+    }
+}
+
+.car > * {
+    visibility: hidden;
+}
+
+.slick-initialized > * {
+    visibility: visible;
+}
+
+.slick-initialized {
+    background: none;
 }
 
 .slick-slide{			
     margin:10px;
 }
 
-.slick-slide img{
-    width:100%;	
+.slick-slide div:focus, .slick-slide, .car {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    user-focus: none;
+    -moz-user-focus: none;
+    -moz-user-focus: -moz-none;
+    outline: none !important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+}
 
+.slick-slide img{
+    position: relative;
+    
+    max-width: 150px;
+    max-height: 150px;
+    
+    left: 50%;
     opacity: 0.8;
     transition: all 200ms ease;
+    transform: translate(-50%, 0);
 }
 
 .slick-center img{
@@ -225,6 +269,7 @@ expert-level::before{
 
 .detail {
     position: relative;
+    display: none;
 }
 
 .detail img{
@@ -280,11 +325,13 @@ expert-level::before{
 }
 
 #home{
-  padding-top: 50px;
-  display: grid;
-  grid-gap: 8px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: 
+    display: grid;
+    padding-top: 50px;
+    
+    grid-gap: 8px;
+    grid-row-gap: 16px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
     "header header header"
     "img text text"
 }
@@ -297,12 +344,7 @@ expert-level::before{
 }
 #home > div { 
   grid-area: header; 
-  height: 96px;
-  line-height: 100%;
-
   position: relative;
-  /*padding-left: 32px;*/
-
   border-bottom: 1px solid #bbb;
 }
 
@@ -315,24 +357,25 @@ expert-level::before{
   margin-right: 20px;
 
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 10pt;
   font-weight: 600;
   letter-spacing: .2rem;
   
   text-decoration: none;
-  line-height: 6.5rem;
   color: #222;
 }
  
 #MyFace{
-  position: relative;
-  object-fit:scale-down;
-  width: 100%;
-  max-height: 100%;
+    position: relative;
+    object-fit:scale-down;
+    width: 98%;
+    border-radius: 6px;
+    max-height: 100%;
 }
 
 #work{
   position: relative;
+  overflow-y: hidden;
 }
 
 #workIntro{
@@ -342,6 +385,7 @@ expert-level::before{
 
 #resume{
   display: grid;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas: 
     "exp exp"
     "skT skT"
