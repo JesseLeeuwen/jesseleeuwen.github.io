@@ -186,7 +186,7 @@ expert-level::before{
 }
 
  .car{
-    width: 90%;
+    width: 85%;
     max-width: 700px;
     margin: 0px auto;
 
@@ -274,6 +274,7 @@ expert-level::before{
 
 .detail img{
     width: 100%;
+    line-height: 100%;
 }
 
 /* Tooltip container */
@@ -375,7 +376,8 @@ expert-level::before{
 
 #work{
   position: relative;
-  overflow-y: hidden;
+  overflow: hidden;
+  
 }
 
 #workIntro{
@@ -390,6 +392,11 @@ expert-level::before{
     "exp exp"
     "skT skT"
     "sk1 sk2"
+}
+
+#resume label{
+    font-weight: 400;
+    display: inline-block;
 }
 
 #experience{

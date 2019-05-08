@@ -85,7 +85,6 @@
                     This is Forstyrre, a dungeon crawler game in which you play a Nordic warrior. The game was made in collaboration with 6 other devs. 
                     </p>
                     
-                    
                     <h5>takeaways</h5>
                     <div class="row">
                         <ul class="six columns">
@@ -106,13 +105,13 @@
                     <!-- education -->             
                     <div class="resumeItem education wow fadeInUp" data-wow-delay="0.1s"> 
                         <h6 class="noMargin header">MBO-4 Game developer - Grafisch Lyceaum Utrecht </h6>
-                        <small><i class="far fa-calendar-alt dateIcon"></i> sept 2013 - jun 2017</small>
+                        <label><i class="far fa-calendar-alt dateIcon"></i> sept 2013 - jun 2017</label>
                     </div>
                     
                     <!-- work -->
                     <div class="resumeItem work wow fadeInUp" data-wow-delay="0.1s" v-for="xp in workExperience.slice().reverse()">
                         <h6 class="noMargin header">{{xp.function}}</h6>
-                        <small><i class="far fa-calendar-alt dateIcon"></i> {{xp.date}}</small> | <small v-if="xp.link"><a :href="xp.link">project link</a></small>
+                        <label><i class="far fa-calendar-alt dateIcon"></i> {{xp.date}}</label> <label v-if="xp.link"> | <a :href="xp.link">project link</a></label>
                         <p>{{xp.description}}</p> 
                     </div>	
                 </div>
