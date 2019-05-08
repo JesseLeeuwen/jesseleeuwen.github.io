@@ -40,6 +40,18 @@
         <!-- page style -->
         <link rel="stylesheet" href="css/main.css"/>
 
+
+        <style>
+            table *{
+                vertical-align: top;
+            }
+
+            iframe{
+                margin-bottom: 2em;
+            }
+            
+        </style>
+
     </head>
     <body>
         <div id="app">
@@ -63,38 +75,40 @@
                 I graduated the Grafisch Lyceum Utrecht in 2017 as game developer. I started programming to be able to work on different kind of projects from entertainment games to interactive game experiences and work with all kind of creative people from different industries 
                 </p>		
             </div>
+
             <div id="work" class="section" v-if="projects.length > 0">
                 <div id="workIntro">
                     <h3>My work</h3>
                 </div>		
-
-                <div class="car" tabindex="-1">
-                    <div><img src="images/Forstyrre_Logo.jpg"></div>
-                    <div><img src="images/Forstyrre_Logo.jpg"></div>
-                    <div><img src="images/Forstyrre_Logo.jpg"></div>
-                    <div><img src="images/Forstyrre_Logo.jpg"></div>
-                    <div><img src="images/Forstyrre_Logo.jpg"></div>
-                    <div><img src="images/Forstyrre_Logo.jpg"></div>
-                </div>
-                        
-                <div class="detail bounceInUp wow">
-                    <h4>Forstyrre</h4>
-                    <img class="u-full-width" src="images/Forstyrre_banner.jpg">
-                    <a class="button" href="https://youtu.be/YoB0Mp1P8J0">gameplay video</a>
-                    <p>
-                    This is Forstyrre, a dungeon crawler game in which you play a Nordic warrior. The game was made in collaboration with 6 other devs. 
-                    </p>
-                    
-                    <h5>takeaways</h5>
-                    <div class="row">
-                        <ul class="six columns">
-                            <li>Inventory system</li>
-                            <li>Modular skinned mesh character setup</li>
-                        </ul>
-                        <ul class="six columns">
-                        </ul>
-                    </div>
-                </div>				
+                
+                <table class="u-full-width">
+                    <tbody>
+                        <tr class="bounceInUp wow">
+                            <th><h4>Forstyrre</h4></th>
+                            <td>                                
+                                <iframe 
+                                    class="u-full-width" 
+                                    height="315" 
+                                    src="https://www.youtube.com/embed/YoB0Mp1P8J0" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                                <p>
+                                    This is Forstyrre, a dungeon crawler game in which you play a Nordic warrior. The game was made in collaboration with 6 other devs. 
+                                </p>
+            
+                                <h5>takeaways</h5>
+                                <div class="row">
+                                    <ul class="six columns">
+                                        <li>Inventory system</li>
+                                        <li>Modular skinned mesh character setup</li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>                        
+                    </tbody>
+                </table>                    			
             </div>
 
             <div id="resume" class="section">
@@ -177,6 +191,29 @@
         $('.car').on("afterChange",()=>{
             
         });
+        
+        /* fix video sizes (works only with video's with aspect 16/9) */
+
+        // Find all YouTube videos
+        var $allVideos = $("iframe");
+
+        // Figure out and save aspect ratio for each video
+        $allVideos.each(function() {
+            var width = $(this).width();
+            $(this).height( (width / 16) * 9 );
+        });
+
+        // When the window is resized
+        $(window).resize(function() {
+            // Resize all videos according to their own aspect ratio
+            $allVideos.each(function() {
+
+                var width = $(this).width();
+                $(this).height( (width / 16) * 9 );
+            });
+
+        // Kick off one resize to fix all videos on page load
+        }).resize();
         </script>	
     </body>
 </html>
