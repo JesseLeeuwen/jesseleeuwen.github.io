@@ -270,11 +270,17 @@ expert-level::before{
 .detail {
     position: relative;
     display: none;
+    border-bottom: 1px solid #E1E1E1;
+    margin-bottom: 24px;
 }
 
-.detail img{
-    width: 100%;
-    line-height: 100%;
+.detail hr{
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+.detail > div > h5{
+    margin-bottom: 0.2rem;
 }
 
 /* Tooltip container */
@@ -326,15 +332,7 @@ expert-level::before{
 }
 
 #home{
-    display: grid;
-    padding-top: 50px;
-    
-    grid-gap: 8px;
-    grid-row-gap: 16px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: 
-    "header header header"
-    "img text text"
+  padding-top: 50px;    
 }
 
 #home > img { grid-area: img; }
@@ -347,6 +345,7 @@ expert-level::before{
   grid-area: header; 
   position: relative;
   border-bottom: 1px solid #bbb;
+  margin-bottom: 16px;
 }
 
 #home > div a:hover{
@@ -377,7 +376,6 @@ expert-level::before{
 #work{
   position: relative;
   overflow: hidden;
-  
 }
 
 #workIntro{

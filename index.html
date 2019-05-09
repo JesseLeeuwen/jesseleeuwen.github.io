@@ -39,19 +39,7 @@
 
         <!-- page style -->
         <link rel="stylesheet" href="css/main.css"/>
-
-
-        <style>
-            table *{
-                vertical-align: top;
-            }
-
-            iframe{
-                margin-bottom: 2em;
-            }
-            
-        </style>
-
+        <link rel="stylesheet" href="css/layout.css"/>
     </head>
     <body>
         <div id="app">
@@ -60,7 +48,7 @@
                     <h3 class="homeCard"> Hi, my name is Jesse van Leeuwen </h3>
                     <div>
                         <a href="#home">About</a> 
-                        <a href="#work" v-if="projects.length > 0">Work</a> 
+                        <a href="gaw.html" v-if="projects.length > 0">Game a week</a> 
                         <a href="#resume">Experience</a>
                         <a href="#skills">Skills</a>
                     </div>
@@ -74,42 +62,7 @@
 
                 I graduated the Grafisch Lyceum Utrecht in 2017 as game developer. I started programming to be able to work on different kind of projects from entertainment games to interactive game experiences and work with all kind of creative people from different industries 
                 </p>		
-            </div>
-
-            <div id="work" class="section" v-if="projects.length > 0">
-                <div id="workIntro">
-                    <h3>My work</h3>
-                </div>		
-                
-                <table class="u-full-width">
-                    <tbody>
-                        <tr class="bounceInUp wow">
-                            <th><h4>Forstyrre</h4></th>
-                            <td>                                
-                                <iframe 
-                                    class="u-full-width" 
-                                    height="315" 
-                                    src="https://www.youtube.com/embed/YoB0Mp1P8J0" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen>
-                                </iframe>
-                                <p>
-                                    This is Forstyrre, a dungeon crawler game in which you play a Nordic warrior. The game was made in collaboration with 6 other devs. 
-                                </p>
-            
-                                <h5>takeaways</h5>
-                                <div class="row">
-                                    <ul class="six columns">
-                                        <li>Inventory system</li>
-                                        <li>Modular skinned mesh character setup</li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>                        
-                    </tbody>
-                </table>                    			
-            </div>
+            </div>            
 
             <div id="resume" class="section">
                 <div id="experience">
@@ -136,7 +89,7 @@
                     <div class="list">
                         <div class="tooltip wow bounceInLeft" v-for="l in skills.languages">
                             <i :class="l.icon"></i>
-                            <span class="tooltiptext">{{l.skill}}</span>
+                            <span class="tooltiptext">{{l.name}} {{l.skill}}</span>
                             <div class="progress" :class="l.skill"></div>
                         </div>	
                     </div>
@@ -147,7 +100,7 @@
                     <div class="list">
                         <div class="tooltip wow bounceInRight" v-for="l in skills.tools">
                             <i :class="l.icon"></i>
-                            <span v-if="l.skill" class="tooltiptext">{{l.skill}}</span>
+                            <span class="tooltiptext">{{l.name}} {{l.skill}}</span>
                             <div v-if="l.skill" class="progress" :class="l.skill"></div>
                         </div>
                     </div>
@@ -170,50 +123,6 @@
         
         <script type="text/javascript" src="js/app.min.js"></script>
         <script type="text/javascript" src="js/wow.min.js"></script>
-        <script>
-        // init wow
-        new WOW().init();
-        
-        // show project details
-        $('.detail').css({display: 'block'});
-        // setup carousel
-        $('.car').slick({
-            dots: true,
-            centerMode: true,
-            focusOnSelect: true,
-            centerPadding: '5vw',
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            touchThreshold: 10,
-            swipeToSlide: true
-        });	
-        // catch change slide event from carousel
-        $('.car').on("afterChange",()=>{
-            
-        });
-        
-        /* fix video sizes (works only with video's with aspect 16/9) */
-
-        // Find all YouTube videos
-        var $allVideos = $("iframe");
-
-        // Figure out and save aspect ratio for each video
-        $allVideos.each(function() {
-            var width = $(this).width();
-            $(this).height( (width / 16) * 9 );
-        });
-
-        // When the window is resized
-        $(window).resize(function() {
-            // Resize all videos according to their own aspect ratio
-            $allVideos.each(function() {
-
-                var width = $(this).width();
-                $(this).height( (width / 16) * 9 );
-            });
-
-        // Kick off one resize to fix all videos on page load
-        }).resize();
-        </script>	
+        <script> new WOW().init(); </script>	
     </body>
 </html>
