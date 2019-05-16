@@ -134,6 +134,10 @@ a:visited:active {
   padding: 8px;
 }
 
+.skillSection > h6 {
+  text-align: center;
+}
+
 .progress::before{
   content: "";
   display: block;
