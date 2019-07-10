@@ -62,19 +62,22 @@
                 <div id="experience">
                     <div style="margin-bottom: 16px;">
                         <h4> Experience </h4>
-                    </div>       
+                    </div>
+                    
+                    <!-- work -->
+                    <div class="resumeItem work wow fadeInUp" data-wow-delay="0.1s" v-for="xp in workExperience.slice()">
+                        <h6 class="noMargin header">{{xp.function}}</h6>
+                        <label><i class="far fa-calendar-alt dateIcon"></i> {{xp.date}}</label> <label v-if="xp.link"> | <a :href="xp.link">project link</a></label>
+                        <p>{{xp.description}}</p> 
+                    </div>	
+                    
                     <!-- education -->             
                     <div class="resumeItem education wow fadeInUp" data-wow-delay="0.1s"> 
                         <h6 class="noMargin header">MBO-4 Game developer - Grafisch Lyceaum Utrecht </h6>
                         <label><i class="far fa-calendar-alt dateIcon"></i> sept 2013 - jun 2017</label>
                     </div>
-                    
-                    <!-- work -->
-                    <div class="resumeItem work wow fadeInUp" data-wow-delay="0.1s" v-for="xp in workExperience.slice().reverse()">
-                        <h6 class="noMargin header">{{xp.function}}</h6>
-                        <label><i class="far fa-calendar-alt dateIcon"></i> {{xp.date}}</label> <label v-if="xp.link"> | <a :href="xp.link">project link</a></label>
-                        <p>{{xp.description}}</p> 
-                    </div>	
+
+
                 </div>
 
                 <h4 id="skills" style="grid-area: skT; padding-top: 50px;">Skills</h4>
