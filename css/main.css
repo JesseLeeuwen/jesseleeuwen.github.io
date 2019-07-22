@@ -135,7 +135,7 @@ a:visited:active {
 }
 
 .skillSection > h6 {
-  text-align: center;
+  text-align: left;
 }
 
 .progress::before{
@@ -369,6 +369,15 @@ expert-level::before{
   color: #222;
 }
  
+#githubButton{
+  float: right;
+  height: 24px;
+  padding: 5px;
+  margin: 0;
+  line-height: 10pt; 
+  width: 140px;
+}
+
 #MyFace{
     position: relative;
     object-fit:scale-down;

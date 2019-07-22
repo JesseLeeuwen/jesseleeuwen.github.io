@@ -31,8 +31,8 @@
         <script type="text/javascript" src="js/vue.min.js"></script>
     </head>
     <body>
-        <div id="app">
-            <div id="home" class="section">
+        <div id="app">            
+            <div id="home" class="section">                    
                 <div>
                     <h3 class="homeCard"> I am not crazy, I am a programmer </h3>
                     <div>
@@ -40,7 +40,8 @@
                         <a href="gaw.html" v-if="projects.length > 0">Game a week</a> 
                         <a href="#resume">Experience</a>
                         <a href="#skills">Skills</a>
-                    </div>
+                        <a target="_blank" href="https://github.com/JesseLeeuwen">View github</a>
+                    </div>                    
                 </div>
 
                 <img id="MyFace" src="https://emberglitch.com/wp-content/uploads/Jesse_working.jpg">
@@ -49,8 +50,8 @@
                     Hi, my name is Jesse van Leeuwen a game programmer.<br/>                
 
                     Together with friends, I started a game company <a href="https://emberglitch.com">Ember Glitch</a> to work on our own games and stories. 
-                    We are currently working on Bloodbag a game about managing your own lifeforce and the lifeforce of your opponents
-                    We also work as freelancer to finance our passion. 
+                    We are currently working on Bloodbag a game about managing your own lifeforce and the lifeforce of your opponents.
+                    In addition to our projects, we work as freelancers to finance our passion. 
                     <br/>
 
                     I started programming so I could work with all kinds of creative people on a wide variety of projects
@@ -60,29 +61,38 @@
 
             <div id="resume" class="section">
                 <div id="experience">
-                    <div style="margin-bottom: 16px;">
-                        <h4> Experience </h4>
-                    </div>
-                    
                     <!-- work -->
-                    <div class="resumeItem work wow fadeInUp" data-wow-delay="0.1s" v-for="xp in workExperience.slice()">
-                        <h6 class="noMargin header">{{xp.function}}</h6>
-                        <label><i class="far fa-calendar-alt dateIcon"></i> {{xp.date}}</label> <label v-if="xp.link"> | <a :href="xp.link">project link</a></label>
-                        <p>{{xp.description}}</p> 
-                    </div>	
-                    
-                    <!-- education -->             
-                    <div class="resumeItem education wow fadeInUp" data-wow-delay="0.1s"> 
-                        <h6 class="noMargin header">MBO-4 Game developer - Grafisch Lyceaum Utrecht </h6>
-                        <label><i class="far fa-calendar-alt dateIcon"></i> sept 2013 - jun 2017</label>
+                    <div><h4> Experience </h4>
+                        <div class="resumeItem work wow fadeInUp" data-wow-delay="0.1s" v-for="xp in workExperience.slice()">
+                            <h6 class="noMargin header">{{xp.function}}</h6>
+                            <label><i class="far fa-calendar-alt dateIcon"></i> {{xp.date}}</label> <label v-if="xp.link"> | <a target="_blank" :href="xp.link">project link</a></label>
+                            <p>{{xp.description}}</p> 
+                        </div>
+                    </div>                    
+
+                    <!-- education -->      
+                    <div><h4> Education </h4>
+                        <div class="resumeItem education wow fadeInUp" data-wow-delay="0.1s"> 
+                            <h6 class="noMargin header">MBO-4 Game developer - Grafisch Lyceaum Utrecht </h6>
+                            <label><i class="far fa-calendar-alt dateIcon"></i> sept 2013 - jun 2017</label>
+                        </div>
                     </div>
-
-
                 </div>
 
-                <h4 id="skills" style="grid-area: skT; padding-top: 50px;">Skills</h4>
+                <div style="grid-area: skT; padding-top: 50px;">
+                    <h4 id="skills"> Skills</h4>
+                    <div class="skillSection">
+                        <h6 class="header">Programming</h6>
+                        <ul style="padding-left: 8px;">
+                            <li> Programming gameplay systems </li>
+                            <li> Tool development within Unity 3D </li>
+                            <li> Version control (Git: setup & usage, SVN: usage) </li>
+                            <li> Knowledge in agile methodologies (Scrum) </li>
+                        </ul>
+                    </div>
+                </div>
                 <div id="skills1" class="skillSection">	
-                    <h6 class="header"> programming langauges </h6>
+                    <h6 class="header">Programming langauges </h6>
                     <div class="list">
                         <div class="tooltip wow bounceInLeft" v-for="l in skills.languages">
                             <i :class="l.icon"></i>
@@ -93,7 +103,7 @@
                 </div>
                 
                 <div id="skills2" class="skillSection ">
-                    <h6 class="header"> programs and tools </h6>
+                    <h6 class="header">Programs and tools </h6>
                     <div class="list">
                         <div class="tooltip wow bounceInRight" v-for="l in skills.tools">
                             <i :class="l.icon"></i>
@@ -105,16 +115,13 @@
             </div> <!-- end resume -->
 
             <footer class="footer section">
-                <small><a target="_blank" href="privacy.html">Privacy Policy</a></small> 
-                <a href="mailto:jesse@emberglitch.com" class="contact font-heavy">
-                    <button class="button-primary">contact</button>
-                </a> 
-                <small><a target="_blank" href="sitemap.xml"> sitemap </a></small>
-                <a target="_blank" href="https://twitter.com/jesseGameDev">
-                    <i class="fab fa-twitter"></i>
-                </a> 
-                <small>Copyright 2018, Jesse van Leeuwen</small> 
+                <a target="_blank" href="https://twitter.com/jesseGameDev"><i class="fab fa-twitter"></i></a> 
+                <a href="mailto:jesse@emberglitch.com" class="contact font-heavy"><button class="button-primary">contact</button></a> 
                 <a target="_blank" href="https://www.linkedin.com/in/jesse-van-leeuwen-00a90bb6/"><i class="fab fa-linkedin-in"></i></a>
+                
+                <small><a target="_blank" href="privacy.html">Privacy Policy</a></small> 
+                <small>Copyright 2018, Jesse van Leeuwen</small> 
+                <small><a target="_blank" href="sitemap.xml"> sitemap </a></small>
             </footer>
         </div> <!-- end app -->
         
