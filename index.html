@@ -9,7 +9,8 @@
         <link rel="canonical" href="https://jessevanleeuwen.nl/">        
         <meta property="og:locale" content="en_US">
         <meta property="og:type" content="website">
-        <meta property="og:description" content="">
+        <meta property="og:description" content="The portfolio/cv of Jesse van Leeuwen">
+        <meta name="Description" content="The portfolio/cv of Jesse van Leeuwen">
         <meta property="og:title" content="Portfolio | Jesse van Leeuwen">
         <meta property="og:url" content="https://jessevanleeuwen.nl/">
         <meta property="og:site_name" content="Portfolio Jesse van Leeuwen">
@@ -40,16 +41,16 @@
                         <a href="gaw.html" v-if="projects.length > 0">Game a week</a> 
                         <a href="#resume">Experience</a>
                         <a href="#skills">Skills</a>
-                        <a target="_blank" href="https://github.com/JesseLeeuwen">View github</a>
+                        <a rel="noreferrer" target="_blank" href="https://github.com/JesseLeeuwen">View github</a>
                     </div>                    
                 </div>
 
-                <img id="MyFace" src="https://emberglitch.com/wp-content/uploads/Jesse_working.jpg">
+                <img alt="foto of me" id="MyFace" src="https://emberglitch.com/wp-content/uploads/Jesse_working.jpg">
 
                 <p class="homeCard">
                     Hi, my name is Jesse van Leeuwen a game programmer.<br/>                
 
-                    Together with friends, I started a game company <a href="https://emberglitch.com">Ember Glitch</a> to work on our own games and stories. 
+                    Together with friends, I started a game company <a rel="noreferrer" href="https://emberglitch.com">Ember Glitch</a> to work on our own games and stories. 
                     We are currently working on Bloodbag a game about managing your own lifeforce and the lifeforce of your opponents.
                     In addition to our projects, we work as freelancers to finance our passion. 
                     <br/>
@@ -65,7 +66,7 @@
                     <div><h4> Experience </h4>
                         <div class="resumeItem work wow fadeInUp" data-wow-delay="0.1s" v-for="xp in workExperience.slice()">
                             <h6 class="noMargin header">{{xp.function}}</h6>
-                            <label><i class="far fa-calendar-alt dateIcon"></i> {{xp.date}}</label> <label v-if="xp.link"> | <a target="_blank" :href="xp.link">project link</a></label>
+                            <label><i class="far fa-calendar-alt dateIcon"></i> {{xp.date}}</label> <label v-if="xp.link"> | <a rel="noreferrer" target="_blank" :href="xp.link">project link</a></label>
                             <p>{{xp.description}}</p> 
                         </div>
                     </div>                    
@@ -115,13 +116,13 @@
             </div> <!-- end resume -->
 
             <footer class="footer section">
-                <a target="_blank" href="https://twitter.com/jesseGameDev"><i class="fab fa-twitter"></i></a> 
-                <a href="mailto:jesse@emberglitch.com" class="contact font-heavy"><button class="button-primary">contact</button></a> 
-                <a target="_blank" href="https://www.linkedin.com/in/jesse-van-leeuwen-00a90bb6/"><i class="fab fa-linkedin-in"></i></a>
+                <a aria-label="my twitter profile" rel="noreferrer" target="_blank" href="https://twitter.com/jesseGameDev"><i class="fab fa-twitter"></i></a> 
+                <a rel="noreferrer" href="mailto:jesse@emberglitch.com" class="contact font-heavy"><button class="button-primary">contact</button></a> 
+                <a aria-label="my linkedin profile" rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/jesse-van-leeuwen-00a90bb6/"><i class="fab fa-linkedin-in"></i></a>
                 
-                <small><a target="_blank" href="privacy.html">Privacy Policy</a></small> 
+                <small><a rel="noreferrer" target="_blank" href="privacy.html">Privacy Policy</a></small> 
                 <small>Copyright 2018, Jesse van Leeuwen</small> 
-                <small><a target="_blank" href="sitemap.xml"> sitemap </a></small>
+                <small><a rel="noreferrer" target="_blank" href="sitemap.xml"> sitemap </a></small>
             </footer>
         </div> <!-- end app -->
         
