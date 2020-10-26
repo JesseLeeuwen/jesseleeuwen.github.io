@@ -8,7 +8,7 @@ var app = new Vue({
             video: ""
         }*/],
         workExperience: [{
-            function: "Game programmer - Monobanda",
+            function: "Coding/Finetuning - Monobanda",
             date: "oct 2020",
             description: "Created game mechanics and assisted with implementing existing game mechanics for an interactive VR story",
             link: "http://monobanda.eu/",
