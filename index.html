@@ -67,6 +67,7 @@
                         <div class="resumeItem work wow fadeInUp" data-wow-delay="0.1s" v-for="xp in workExperience.slice()">
                             <h6 class="noMargin header">{{xp.function}}</h6>
                             <label><i class="far fa-calendar-alt dateIcon"></i> {{xp.date}}</label> <label v-if="xp.link"> | <a rel="noreferrer" target="_blank" :href="xp.link">project link</a></label>
+                            <label v-if="xp.additionalLink"> | <a rel="noreferrer" target="_blank" :href="xp.additionalLink">additional project info</a></label>
                             <p>{{xp.description}}</p> 
                         </div>
                     </div>                    
