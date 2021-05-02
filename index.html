@@ -1,106 +1,135 @@
 <!DOCTYPE html>
-<html lang="en-US" prefix="og: http://ogp.me/ns#">
+
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
     <head>
-        <title>Portfolio | Jesse van Leeuwen</title>
+        <title>Jesse van Leeuwen | GameDev Portfolio </title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">  
+        <meta name="viewport" content="width=device-width, initial-scale=0.85">  
 
         <link rel="canonical" href="https://jessevanleeuwen.nl/">        
-	    <meta property="og:locale" content="en_US">
+        <meta property="og:locale" content="en_US">
         <meta property="og:type" content="website">
-        <meta property="og:description" content="">
+        <meta property="og:description" content="The portfolio/cv of Jesse van Leeuwen">
+        <meta name="Description" content="The portfolio/cv of Jesse van Leeuwen">
         <meta property="og:title" content="Portfolio | Jesse van Leeuwen">
         <meta property="og:url" content="https://jessevanleeuwen.nl/">
         <meta property="og:site_name" content="Portfolio Jesse van Leeuwen">
 
-        <link rel="stylesheet" 
-            href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
-            integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" 
-            crossorigin="anonymous">
+        <meta http-equiv="Cache-control" content="public">
 
-        <link rel='stylesheet' href="css/typography.min.css">
-        <link rel='stylesheet' href="css/main.min.css">
-        <link rel='stylesheet' media="screen and (min-width: 720px)" href="css/layout.min.css">
+        <!--stylesheets -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/skeleton.css">
+        <link rel="stylesheet" href="css/animate.css">
 
-        <script src="js/vue.min.js"></script>
+        <!--fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/devicon.css">
+
+        <!-- page style -->
+        <link rel="stylesheet" href="css/main.css"/>
+        <link rel="stylesheet" href="css/layout.css" media="screen and (min-width: 650px)" />        
     </head>
     <body>
-        <div id="app">
-            <header class="noMargin header card"> 
-                <img src="Images/Jesse.jpg" />
-                <p v-html="text"> </p>
-            </header>
-            
-            <main class="main-content">
-
-                <h3 class="center">About Me</h3>
-                <div v-if="story != ''" class="center card">
-                    <p class="center" style="padding: 15px;" v-html="story"></p>
+        <div id="app">            
+            <div id="home" class="section">                    
+                <div>
+                    <h3 class="homeCard"> I am not crazy, I am a programmer </h3>
+                    <div>
+                        <a href="#home">About</a> 
+                        <a href="gaw.html" v-if="projects.length > 0">Game a week</a> 
+                        <a href="#resume">Experience</a>
+                        <a href="#skills">Skills</a>
+                        <a rel="noreferrer" target="_blank" href="https://github.com/JesseLeeuwen">View github</a>
+                    </div>                    
                 </div>
 
-                <h3 class="center">Work Experience</h3>
-                <div class="center card Resume">
-                    <div class="work center" v-for="work in workExperience">
-                        <h4 class="noMargin">{{work.function}}</h4>
-                        <small><i class="far fa-calendar-alt dateIcon"></i>{{work.date}}</small>
-                        <p>{{work.description}}</p>
-                        <small><a v-if="work.link != ''" :href="work.link">project link</a></small>
-                    </div>
-                </div>
+                <img alt="foto of me" id="MyFace" src="images/Jesse_working.jpg">
 
-                <h3 class="center" v-if="projects.length > 0">Personal Projects</h3>
-                <div class="project-list center" v-if="projects.length > 0">
-                    <a v-for="project in projects" :href="project.link" target="_blank">
-                        <div class="project">
-                            <img class="project-img" :src="project.img" />
-                            <div>
-                                <h3 class="project-title">{{project.name}}</h3>
-                                <p class="project-desc">
-                                    <small>{{project.tagline}}</small><br/><br/>
-                                    {{ project.description }}
-                                </p>
-                            </div>
+                <p class="homeCard">
+                    Hi, my name is Jesse van Leeuwen a game programmer.<br/>                
+
+                    Together with friends, I started a game company <a rel="noreferrer" href="https://emberglitch.com">Ember Glitch</a> to work on our own games and stories. 
+                    We are currently working on Bloodbag a game about managing your own lifeforce and the lifeforce of your opponents.
+                    In addition to our projects, we work as freelancers to finance our passion. 
+                    <br/>
+
+                    I started programming so I could work with all kinds of creative people on a wide variety of projects
+                    from entertainment games to interactive game experiences
+                </p>		
+            </div>            
+
+            <div id="resume" class="section">
+                <div id="experience">
+                    <!-- work -->
+                    <div><h4> Experience </h4>
+                        <div class="resumeItem work wow fadeInUp" data-wow-delay="0.1s" v-for="xp in workExperience.slice()">
+                            <h6 class="noMargin header">{{xp.function}}</h6>
+                            <label><i class="far fa-calendar-alt dateIcon"></i> {{xp.date}}</label> <label v-if="xp.link"> | <a rel="noreferrer" target="_blank" :href="xp.link">project link</a></label>
+                            <label v-if="xp.additionalLink"> | <a rel="noreferrer" target="_blank" :href="xp.additionalLink">additional project info</a></label>
+                            <p>{{xp.description}}</p> 
                         </div>
-                    </a>
-                </div>
-            </main>
+                    </div>                    
 
-            <aside class="skills">
-                <h4 class="noMargin centerText">programming languages:</h4>
-                <div v-for="skill in skills.languages">
-                    <label class="skillName">{{skill.name}}</label>
-                    <div class="skillBack"><!-- skill background -->
-                        <div class="skill yellowBack" 
-                            v-bind:style="{width: skill.width }"></div>
+                    <!-- education -->      
+                    <div><h4> Education </h4>
+                        <div class="resumeItem education wow fadeInUp" data-wow-delay="0.1s"> 
+                            <h6 class="noMargin header">MBO-4 Game developer - Grafisch Lyceaum Utrecht </h6>
+                            <label><i class="far fa-calendar-alt dateIcon"></i> sept 2013 - jun 2017</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="grid-area: skT; padding-top: 50px;">
+                    <h4 id="skills"> Skills</h4>
+                    <div class="skillSection">
+                        <h6 class="header">Programming</h6>
+                        <ul style="padding-left: 8px;">
+                            <li> Programming gameplay systems </li>
+                            <li> Tool development within Unity 3D </li>
+                            <li> Version control (Git: setup & usage, SVN: usage) </li>
+                            <li> Knowledge in agile methodologies (Scrum) </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="skills1" class="skillSection">	
+                    <h6 class="header">Programming langauges </h6>
+                    <div class="list">
+                        <div class="tooltip wow bounceInLeft" v-for="l in skills.languages">
+                            <i :class="l.icon"></i>
+                            <span class="tooltiptext">{{l.name}} {{l.skill}}</span>
+                            <div class="progress" :class="l.skill"></div>
+                        </div>	
                     </div>
                 </div>
                 
-                <br/>
-                
-                <h4 class="noMargin centerText">programs en libaries:</h4>
-                <div v-for="skill in skills.programs">
-                    <label class="skillName">{{skill.name}}</label>
-                    <div class="skillBack"><!-- skill background -->
-                        <div class="skill yellowBack" 
-                            v-bind:style="{width: skill.width }"></div>
+                <div id="skills2" class="skillSection ">
+                    <h6 class="header">Programs and tools </h6>
+                    <div class="list">
+                        <div class="tooltip wow bounceInRight" v-for="l in skills.tools">
+                            <i :class="l.icon"></i>
+                            <span class="tooltiptext">{{l.name}} {{l.skill}}</span>
+                            <div v-if="l.skill" class="progress" :class="l.skill"></div>
+                        </div>
                     </div>
                 </div>
-            </aside>
+            </div> <!-- end resume -->
 
-            <footer class="footer">
-                <small><a target="_blank" href="privacy.html">Privacy Policy</a></small>
-                <a class="contact font-heavy" href="mailto:jesse@emberglitch.com"><div>
-                    contact
-                </div></a>
-                <small>&copy; Copyright 2018, Jesse van Leeuwen</small>
-                <a target="_blank" href="https://twitter.com/jesseGameDev">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a target="_blank" href="https://www.linkedin.com/in/jesse-van-leeuwen-00a90bb6/">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
+            <footer class="footer section">
+                <a aria-label="my twitter profile" rel="noreferrer" target="_blank" href="https://twitter.com/jesseGameDev"><i class="fab fa-twitter"></i></a> 
+                <a rel="noreferrer" href="mailto:jesse@emberglitch.com" class="contact font-heavy"><button class="button-primary">contact</button></a> 
+                <a aria-label="my linkedin profile" rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/jesse-van-leeuwen-00a90bb6/"><i class="fab fa-linkedin-in"></i></a>
+                
+                <small><a rel="noreferrer" target="_blank" href="privacy.html">Privacy Policy</a></small> 
+                <small>Copyright 2018, Jesse van Leeuwen</small> 
+                <small><a rel="noreferrer" target="_blank" href="sitemap.xml"> sitemap </a></small>
             </footer>
-        </div>
-        <script src="js/app.min.js"></script>
+        </div> <!-- end app -->
+        
+        <script type="text/javascript" src="js/vue.min.js"></script>
+        <script type="text/javascript" src="js/app.min.js"></script>
+        <script type="text/javascript" src="js/wow.min.js"></script>
+        <script> new WOW().init(); </script>	
     </body>
 </html>

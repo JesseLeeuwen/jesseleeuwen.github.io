@@ -1,0 +1,19 @@
+
+#home{
+    display: grid;
+    grid-gap: 8px;
+    grid-row-gap: 16px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "header header header"
+    "img text text"
+}
+
+#home > div { 
+    margin-bottom: 0px;
+}
+
+#work .detail{
+    display: grid !important;
+    grid-template-columns: 1fr 4fr;
+}
