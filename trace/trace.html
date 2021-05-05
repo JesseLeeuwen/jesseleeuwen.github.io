@@ -6,7 +6,24 @@
     <script>
 
         var data = {
-            progress: 1
+            progress: 1,
+            currentImg: [
+                "",
+                "images/PostNL-animatie_Artboard-5.jpg",
+                "images/PostNL-animatie-01.jpg",
+                "images/PostNL-animatie-03-1030x1030.jpg",
+                "images/opadrres.jpg"
+            ],
+            TitleText: [
+                "Pakket is nog niet door PostNL ontvangen of verwerkt",
+                "Zending is ontvangen door PostNL",
+                "Zending is gesorteerd",
+                "Bezorger is onderweg",
+                "Jesse is bezorgd"
+            ],
+            tijden: [
+                "", "5 mei 23:05", "6 mei 12:31", "7 mei 18:17", "7 mei 19:05"
+            ]
         };
 
     </script>
@@ -134,9 +151,20 @@
             justify-content: center;
 
             min-height: 300px;
+
+            position: relative;
         }
 
-        
+        #center
+        {
+            position: relative;
+            margin: 0px auto;
+        }
+
+        #center img { 
+            width: auto; 
+            height: 400px;
+        }
 
         #journey
         {
@@ -329,57 +357,56 @@
             
         <div style="text-align: center;" >
             <div  style="margin-bottom: 21px;"  ><strong> Jesse BV </strong></div>
-            <h2> Pakket is nog niet door PostNL ontvangen of verwerkt </h2>
-            <h3 class="regionHeader"> Verwachte bezorg moment 7 mei tussen 18:00 en 20:00 </h3>
+            <h2> {{TitleText[progress]}} </h2>
+            <h3 v-if="progress < 4" class="regionHeader"> Verwachte bezorg moment 7 mei tussen 18:00 en 20:00 </h3>
+            <h3 v-if="progress > 3" class="regionHeader"> bezorgd :blush: </h3>
         </div>
 
-        <div>
-            <!-- bezorg fase afbeelding -->
+        <div id="center">
+            <img :src="currentImg[progress]">
         </div>
 
         </div>
         <div id="journey" class="region">
             <img src="images/package-on-the-way.svg" class="regionIcon">
             <div class="regionHeader">
-                
-
                 <h3> De reis van je pakket </h3>
                 <p> Volg het stap voor stap </p>
             </div>
             <div style="grid-area: content;">
                 <ol class="ptt-timeline__list" reversed="">
-                    <!-- <li class="ptt-timeline__item ng-star-inserted" data-id-art="timelineItem">
+                    <li v-if="progress > 3" class="ptt-timeline__item ng-star-inserted" data-id-art="timelineItem">
                         <ptt-trackandtrace-icon class="ptt-timeline__icon ng-star-inserted">
                             <span class="pci-icon pci-icon--deliverd-home ng-star-inserted"></span>
                         </ptt-trackandtrace-icon>
                         <div class="ptt-timeline__details">
-                            <div class="ptt-timeline__ata" data-id-art="timelineObservationDateTime"> 26 april 20:09
+                            <div class="ptt-timeline__ata" data-id-art="timelineObservationDateTime"> {{tijden[progress]}}
                             </div>
                             <div class="ptt-timeline__description">
                                 <h3 data-id-art="timelineStatusDescription">Zending is bezorgd</h3>
                                 <p>
                                     <ptt-details-status-specification data-id-art="timelineStatusSpecification">
-                                        <span class="ng-star-inserted"> Bezorgd op </span> 26 april 20:09
+                                        <span class="ng-star-inserted"> Bezorgd op </span> {{tijden[progress]}}
                                     </ptt-details-status-specification>
                                 </p>
                             </div>
                         </div>
                     </li>
 
-                    <li class="ptt-timeline__item ng-star-inserted" data-id-art="timelineItem"><span
+                    <li v-if="progress > 2"class="ptt-timeline__item ng-star-inserted" data-id-art="timelineItem"><span
                             class="ptt-timeline__icon"></span>
                         <div class="ptt-timeline__details">
-                            <div class="ptt-timeline__ata" data-id-art="timelineObservationDateTime"> 26 april 17:17
+                            <div class="ptt-timeline__ata" data-id-art="timelineObservationDateTime"> {{tijden[progress]}}
                             </div>
                             <div class="ptt-timeline__description" data-id-art="timelineObservationDescription">
                                 Bezorger is onderweg </div>
                         </div>
                     </li>
                     
-                    <li class="ptt-timeline__item ng-star-inserted" data-id-art="timelineItem"><span
+                    <li v-if="progress > 1" class="ptt-timeline__item ng-star-inserted" data-id-art="timelineItem"><span
                             class="ptt-timeline__icon"></span>
                         <div class="ptt-timeline__details">
-                            <div class="ptt-timeline__ata" data-id-art="timelineObservationDateTime"> 26 april 10:31
+                            <div class="ptt-timeline__ata" data-id-art="timelineObservationDateTime"> {{tijden[progress]}}
                             </div>
                             <div class="ptt-timeline__description" data-id-art="timelineObservationDescription">
                                 Zending is gesorteerd </div>
@@ -389,12 +416,12 @@
                     <li class="ptt-timeline__item ng-star-inserted" data-id-art="timelineItem"><span
                             class="ptt-timeline__icon"></span>
                         <div class="ptt-timeline__details">
-                            <div class="ptt-timeline__ata" data-id-art="timelineObservationDateTime"> 25 april 20:45
+                            <div class="ptt-timeline__ata" data-id-art="timelineObservationDateTime"> {{tijden[progress]}}
                             </div>
                             <div class="ptt-timeline__description" data-id-art="timelineObservationDescription">
                                 Zending is ontvangen door PostNL </div>
                         </div>
-                    </li> -->
+                    </li>
 
                     <li class="ptt-timeline__item ng-star-inserted" data-id-art="timelineItem">
                         <span class="ptt-timeline__icon"></span>
@@ -426,7 +453,7 @@
                     <p> Amersfoort </p>
                     <p> Nederland </p>
                 </div>   
-                <!--div></div-->
+                <div></div>
 
                 <div style="display: grid; grid-template-columns: 1fr; grid-template-rows: 24px;" >
                     <strong class="pakket-info-h4"> Track & trace-code </strong>
@@ -445,15 +472,13 @@
         </div>
     </main>
 
-
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
     <script>
-
-        var app = new Vue({
+    var app = new Vue({
         el: '#app',
         data: data
-        })
+    })
     </script>
 
 </body>
