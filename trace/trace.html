@@ -7,6 +7,10 @@
 
         var data = {
             progress: 2,
+            bezorgText: "Hij is er bijna, nog maar een paar haltes. verwachten moment 7 mei 19:05",
+            tijden: [
+                "", "5 mei 23:05", "6 mei 18:02", "7 mei 18:17", "7 mei 19:05"
+            ],
             currentImg: [
                 "",
                 "images/PostNL-animatie_Artboard-5.jpg",
@@ -18,11 +22,8 @@
                 "Pakket is nog niet door PostNL ontvangen of verwerkt",
                 "Zending is ontvangen door PostNL",
                 "Zending is gesorteerd",
-                "Bezorger is onderweg",
-                "Jesse is bezorgd"
-            ],
-            tijden: [
-                "", "5 mei 23:05", "6 mei 18:02", "7 mei 18:17", "7 mei 19:05"
+                "Je Jesse is onderweg",
+                "Kriebel knabel knuisje wie staat er voor je huisje "
             ]
         };
 
@@ -143,9 +144,9 @@
 
         #current
         {
-            display: grid;
-            grid-template-columns: auto;
-            grid-template-rows: auto;
+            display: block;
+            grid-template-columns: none;
+            grid-template-rows: none;
             grid-template-areas: none;
             column-gap: 0;
             justify-content: center;
@@ -159,12 +160,39 @@
         {
             position: relative;
             margin: 0px auto;
+            width: 100%;
+            /* justify-content: center; */
+            /* display: grid; */
+
+        }
+
+        /* The animation code */
+        @keyframes backgroundPan {
+        0%   {background-position:700px 0px;}
+        100% {background-position:-1000px 0px;}
         }
 
         #center img { 
             width: auto; 
             height: 400px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
+        
+        .trein{
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-image: url('images/Screenshot 2021-05-05 232213.jpg');
+            background-repeat:no-repeat;
+            background-position:700px 0px;
+            animation-name: backgroundPan;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
 
         #journey
         {
@@ -176,12 +204,6 @@
             position: relative;
             /*margin-left: 3.25rem;*/
             list-style-type: none
-        }
-
-        @media (min-width:41.25rem) {
-            .ptt-timeline__list {
-                /*margin-left: 12.5625rem*/
-            }
         }
 
         .ptt-timeline__list .ptt-timeline__item:first-child .ptt-timeline__ata {
@@ -330,13 +352,18 @@
         @media (min-width: 10em) and (max-width: 50em)
         {
             .pakket-info-line
-                {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: 1fr;
-                    column-gap: 7px;
-                    row-gap: 14px;
-                }
+            {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr;
+                column-gap: 7px;
+                row-gap: 14px;
+            }
+
+            #center img { 
+                width: 100%;
+                height: auto;
+            }
         }
 
         .pakket-info-line p{margin: 0; max-height: 24px;}
@@ -358,12 +385,14 @@
         <div style="text-align: center;" >
             <div  style="margin-bottom: 21px;"  ><strong> Jesse BV </strong></div>
             <h2> {{TitleText[progress]}} </h2>
-            <h3 v-if="progress < 4" class="regionHeader"> Verwachte bezorg moment 7 mei tussen 18:00 en 20:00 </h3>
-            <h3 v-if="progress > 3" class="regionHeader"> bezorgd :blush: </h3>
+            <h3 v-if="progress < 3" class="regionHeader"> Verwachte bezorg moment 7 mei tussen 18:00 en 20:00 </h3>
+            <h3 v-if="progress == 3" class="regionHeader"> {{bezorgText}} </h3>
+            <h3 v-if="progress > 3" class="regionHeader"> bezorgd &#128522;</h3>
         </div>
 
         <div id="center">
-            <img :src="currentImg[progress]">
+            <img v-if="progress != 3" :src="currentImg[progress]">
+            <div v-if="progress == 3" class="trein"></div>
         </div>
 
         </div>
