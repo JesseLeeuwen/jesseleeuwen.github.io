@@ -7,21 +7,33 @@ var app = new Vue({
             takeaways: [],
             video: ""
         }*/],
-        workExperience: [{
-            function: "Coding/Finetuning - Monobanda",
-            date: "oct 2020",
-            description: "Created game mechanics and assisted with implementing existing game mechanics for an interactive VR story",
-            link: "http://monobanda.eu/",
-            additionalLink: "https://heartwire.org/the-shape-of-us/"
-        },{
+        workExperience: [
+        {
             function: "Game programmer / co-founder - Ember Glitch",
             date: "oct 2017 - present",
             description: "I work on our own projects as the lead programmer and as a freelance gameplay programmer on various projects",
             link: "https://emberglitch.com"
-        }, {
+        },{
+            function: "Porting/Optimalisation - Monobanda",
+            date: "sept 2021 - mrt 2022",
+            description: "Create  Remembering VR Port for Oculus Qeust and HTC Flow, made optimisation to various gameplay element to work on mobile hardware",
+            link: "https://monobanda.eu/project/rememberingvr",
+            additionalLink: "https://www.rememberingthegame.nl/"
+        },{
+            function: "Programmer - Monobanda",
+            date: "mrt 2021 - feb 2022",
+            description: "Work on Visible Voice as a programmer of various systems and prototyping mechanics. \n Visible Voice is a safe and inviting environment for children and youth dealing with intelligible behaviour, to better cope with feelings of aggression and anxiety",
+            link: "https://monobanda.eu/project/visiblevoice"
+        },{
+            function: "Coding/Finetuning - Monobanda",
+            date: "oct 2020",
+            description: "Created game mechanics and assisted with implementing existing game mechanics for an interactive VR story The Shape of Us",
+            link: "https://monobanda.eu/project/shapeofus",
+            additionalLink: "https://heartwire.org/the-shape-of-us/"
+        },{
             function: "Game programmer - Monobanda",
             date: "dec 2017 - apr 2018",
-            description: "worked as Game programmer on Timbre in de klas. My function was to create the main loop and gameplay mechanics",
+            description: "worked as Game programmer on Timbre in de klas. \nMy function was to create the main loop and gameplay mechanics",
             link: "http://monobanda.eu/project/timbreclass"
         }, {
             function: "Game programmer - Monobanda-PLAY",
@@ -42,90 +54,50 @@ var app = new Vue({
         skills: {
             languages: [{
                     icon: "devicon-csharp-plain",
-                    skill: "advanced",
                     name: "C#"
                 },{
                     icon: "devicon-cplusplus-plain",
-                    skill: "intermidiate",
                     name: "C++"
                 },{
                     icon: "devicon-javascript-plain",
-                    skill: "intermidiate",
                     name: "Javascript"
                 },{
                     icon: "devicon-html5-plain",
-                    skill: "advanced",
                     name: "HTML5"
                 },{
-                    icon: "devicon-css3-plain",
-                    skill: "advanced",
-                    name: "CSS3"
-                },{
                     icon: "devicon-python-plain",
-                    skill: "intermidiate",
                     name: "Python"
                 },{
-                    icon: "devicon-php-plain",
-                    skill: "intermidiate",
-                    name: "PHP"
-                },{
-                    icon: "devicon-less-plain-wordmark",
-                    skill: "advanced",
-                    name: "LESS"
-                },{
                     icon: "icon-shaders",
-                    skill: "intermidiate",
                     name: "Shaders"
-                },{
-                    icon: "icon-lua",
-                    skill: "intermidiate",
-                    name: "Lua"
                 }
             ],
-            tools: [{
-                    icon: "devicon-django-plain",
-                    skill: "intermidiate",
-                    name: "Django"
-                },{
-                    icon: "devicon-git-plain",
-                    skill: "intermidiate",
-                    name: "Git"
-                },{
-                    icon: "devicon-dot-net-plain",
-                    skill: "intermidiate",
-                    name: "Dot-net"
-                },{
-                    icon: "devicon-visualstudio-plain",
-                    skill: "intermidiate",
-                    name: "Visualstudio"
-                },{
-                    icon: "devicon-vuejs-plain",
-                    skill: "beginner",
-                    name: "Vuejs"
-                },{
-                    icon: "devicon-mongodb-plain",
-                    skill: "intermidiate",
-                    name: "Mongodb"
-                },{
-                    icon: "icons8-unreal-engine",
-                    skill: "beginner",
-                    name: "Unreal"
-                },{
+            tools: [
+                {
                     icon: "icon8-unity3d",
-                    skill: "advanced",
                     name: "Unity3D"
                 },{
                     icon: "icon-blender",
-                    skill: "beginner",
                     name: "Blender"
+                },{
+                    icon: "devicon-git-plain",
+                    name: "Git"
+                },{
+                    icon: "devicon-dot-net-plain",
+                    name: "Dot-net"
+                },{
+                    icon: "devicon-mongodb-plain",
+                    name: "Mongodb"
+                },{
+                    icon: "icons8-unreal-engine",
+                    name: "Unreal"
                 },{
                     icon: "devicon-trello-plain",
                     name: "Trello"
                 },{
-                    icon: "devicon-slack-plain",
-                    name: "Slack"
-                },
-                
+                    icon: "devicon-django-plain",
+                    name: "Django"
+                }                
             ],
         }
     }
