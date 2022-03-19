@@ -1,8 +1,8 @@
 
 #home{
     display: grid;
-    grid-gap: 8px;
-    grid-row-gap: 16px;
+    grid-gap: 32px;
+    grid-row-gap: 32px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
     "header header header"

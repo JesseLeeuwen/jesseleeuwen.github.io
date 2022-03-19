@@ -29,14 +29,15 @@
 
         <!-- page style -->
         <link rel="stylesheet" href="css/main.css"/>
-        <link rel="stylesheet" href="css/layout.css" media="screen and (min-width: 650px)" />        
+        <link rel="stylesheet" href="css/layout.css" media="screen and (min-width: 650px)" /> 
+        
     </head>
     <body>
         <div id="app">            
             <div id="home" class="section">                    
                 <div>
-                    <h3 class="homeCard"> I am not crazy, I am a programmer </h3>
-                    <div>
+                    <h3 class="homeCard align-right"> I am not crazy, I am a programmer </h3>
+                    <div class="align-right">
                         <a href="#home">About</a> 
                         <a href="gaw.html" v-if="projects.length > 0">Game a week</a> 
                         <a href="#resume">Experience</a>
@@ -59,6 +60,8 @@
                     from entertainment games to interactive game experiences
                 </p>		
             </div>            
+
+            
 
             <div id="resume" class="section">
                 <div id="experience">
@@ -86,7 +89,7 @@
                     <div class="skillSection">
                         <h6 class="header">Programming</h6>
                         <ul style="padding-left: 8px;">
-                            <li> Programming gameplay systems </li>
+                            <li> Designing and programming (gameplay) systems </li>
                             <li> Tool development within Unity 3D </li>
                             <li> Version control (Git: setup & usage, SVN: usage) </li>
                             <li> Knowledge in agile methodologies (Scrum) </li>
@@ -98,19 +101,17 @@
                     <div class="list">
                         <div class="tooltip wow bounceInLeft" v-for="l in skills.languages">
                             <i :class="l.icon"></i>
-                            <span class="tooltiptext">{{l.name}} {{l.skill}}</span>
-                            <div class="progress" :class="l.skill"></div>
+                            <span class="tooltiptext">{{l.name}}</span>
                         </div>	
                     </div>
                 </div>
                 
                 <div id="skills2" class="skillSection ">
-                    <h6 class="header">Programs and tools </h6>
+                    <h6 class="header">Tools </h6>
                     <div class="list">
-                        <div class="tooltip wow bounceInRight" v-for="l in skills.tools">
+                        <div class="tooltip wow bounceInLeft" v-for="l in skills.tools">
                             <i :class="l.icon"></i>
-                            <span class="tooltiptext">{{l.name}} {{l.skill}}</span>
-                            <div v-if="l.skill" class="progress" :class="l.skill"></div>
+                            <span class="tooltiptext">{{l.name}}</span>
                         </div>
                     </div>
                 </div>
@@ -122,14 +123,16 @@
                 <a aria-label="my linkedin profile" rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/jesse-van-leeuwen-00a90bb6/"><i class="fab fa-linkedin-in"></i></a>
                 
                 <small><a rel="noreferrer" target="_blank" href="privacy.html">Privacy Policy</a></small> 
-                <small>Copyright 2018, Jesse van Leeuwen</small> 
+                <small>Copyright 2022, Jesse van Leeuwen</small> 
                 <small><a rel="noreferrer" target="_blank" href="sitemap.xml"> sitemap </a></small>
             </footer>
         </div> <!-- end app -->
         
         <script type="text/javascript" src="js/vue.min.js"></script>
-        <script type="text/javascript" src="js/app.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/wow.min.js"></script>
         <script> new WOW().init(); </script>	
+        
+
     </body>
 </html>
