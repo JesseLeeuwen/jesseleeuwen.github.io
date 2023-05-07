@@ -76,7 +76,7 @@
                 <div id="experience">
                     <!-- work -->
                     <div><h4> Experience </h4>
-                        <div class="resumeItem work wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="0.5s" v-for="xp in workExperience.slice()">
+                        <div class="resumeItem work wow fadeInUp" data-wow-duration="0.5s" v-for="xp in workExperience.slice()">
                             <h6 class="noMargin header">{{xp.function}}</h6>
                             <label><i class="far fa-calendar-alt dateIcon"></i> {{xp.date}}</label> 
                             <label v-if="xp.link"> | <a rel="noreferrer" target="_blank" :href="xp.link">web page</a></label>
@@ -87,7 +87,7 @@
 
                     <!-- education -->      
                     <div><h4> Education </h4>
-                        <div class="resumeItem education wow fadeInUp" data-wow-delay="0.1s" data-wow-duration="0.5s"> 
+                        <div class="resumeItem education wow fadeInUp" data-wow-duration="0.5s"> 
                             <h6 class="noMargin header">MBO-4 Game developer - Grafisch Lyceaum Utrecht </h6>
                             <label><i class="far fa-calendar-alt dateIcon"></i> sept 2013 - jun 2017</label>
                         </div>
@@ -126,7 +126,7 @@
                     </div>
                 </div>
             </section> <!-- end resume -->
-
+            
             <footer class="footer section">
                 <a aria-label="my twitter profile" rel="noreferrer" target="_blank" href="https://twitter.com/jesseGameDev"><i class="fab fa-twitter"></i></a> 
                 <a rel="noreferrer" href="mailto:jesse@emberglitch.com" class="contact font-heavy"><button class="button-primary">contact</button></a> 
@@ -138,9 +138,10 @@
             </footer>
         </main> <!-- end app -->
         
-        <script type="text/javascript" src="js/wow.min.js"></script>
         <script type="text/javascript" src="js/vue.min.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
+        
+        <script type="text/javascript" src="js/wow.min.js"></script>
         <script> new WOW().init(); </script>	
     </body>
 </html>

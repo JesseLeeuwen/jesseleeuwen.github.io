@@ -26,7 +26,7 @@ var app = new Vue({
         {
             function: "programmer / Studio Harm Hasenaar",
             date: "mei 2023 - present",
-            description: "programmer on various projects for the studio and support the other programmers",
+            description: "Programmer on various projects for the studio and support the other programmers",
             link: "https://studioharmhasenaar.nl"
         },{
             function: "Programmer - Monobanda",
