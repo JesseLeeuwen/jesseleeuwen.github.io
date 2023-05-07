@@ -13,7 +13,12 @@
     margin-bottom: 0px;
 }
 
-#work .detail{
-    display: grid !important;
-    grid-template-columns: 1fr 4fr;
+#services
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 32px;
+
+    justify-content: center!important;
+    align-content: center;
 }

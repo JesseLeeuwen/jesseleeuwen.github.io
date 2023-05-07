@@ -63,6 +63,15 @@
                 </p>		
             </section>                       
 
+            <section id="services" class="section">
+                <div class="service wow bounceIn" v-for="service in services">
+                    <i :class="service.graphic"></i>
+                    
+                    <h5> {{service.header}} </h5>
+                    <p> {{service.description}} </p>
+                </div>
+            </section>
+
             <section id="resume" class="section">
                 <div id="experience">
                     <!-- work -->

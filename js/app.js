@@ -1,6 +1,21 @@
 var app = new Vue({
     el: "#app",
     data: {
+        services :[
+        {
+            graphic: "fas fa-file-code",
+            header: "Programming",
+            description: "Design and create games, installations and systems for you applications. making your vision a reality."
+        },{
+            graphic: "fas fa-tachometer-alt",
+            header: "Optimisation",
+            description: "It's almost time to release your project but need that extra bit of performance"
+        },{
+            graphic: "fas fa-pencil-ruler",
+            header: "Team player",
+            description: "Not just a programmer, but an addition to your team, prepaired to work with your creative team."
+        },
+        ],
         workExperience: [
         {
             function: "Game programmer / co-founder - Ember Glitch",

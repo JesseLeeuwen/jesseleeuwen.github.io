@@ -388,36 +388,20 @@ expert-level::before{
     max-height: 100%;
 }
 
-#projects{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#services{
+    min-height: 200px;
 }
 
-#project-carousel{
-  display: inline-block;
-  position: relative;
-  width: 90%;
+.service{
+  width: fit-content;
+  height: 100%;
+  place-self: center;
+  text-align: center;
 }
 
-#project-carousel > .slick-arrow::before{
-  color: black ;
-}
-
-#project-carousel > .slick-slide{
-
-}
-
-
-#work{
-  position: relative;
-  overflow: hidden;
-}
-
-#workIntro{
-  margin-bottom: 0px;
-  grid-column: 1 / -1;
+.service i{
+  font-size: 3em;
+  color: #09963B;
 }
 
 #resume{
