@@ -1,29 +1,29 @@
 var app = new Vue({
     el: "#app",
     data: {
-        projects: [/*{
-            name: "GAW #1",
-            description: "puzzle your way through generated dungeon one turn at a time!",
-            takeaways: ["", ""],
-            video: ""
-        }*/],
         workExperience: [
         {
             function: "Game programmer / co-founder - Ember Glitch",
             date: "oct 2017 - present",
             description: "Work as the lead programmer / founder and as a freelance gameplay programmer on various projects",
             link: "https://emberglitch.com"
+        },
+        {
+            function: "programmer / Studio Harm Hasenaar",
+            date: "mei 2023 - present",
+            description: "programmer on various projects for the studio and support the other programmers",
+            link: "https://studioharmhasenaar.nl"
+        },{
+            function: "Programmer - Monobanda",
+            date: "mrt 2021 - present",
+            description: "Worked on Visible Voice as a programmer of various systems and prototyping mechanics. \n Visible Voice is a safe and inviting environment for children and youth dealing with intelligible behaviour, to better cope with feelings of aggression and anxiety",
+            link: "https://monobanda.eu/project/visiblevoice"
         },{
             function: "Porting/Optimalisation - Monobanda",
             date: "sept 2021 - mrt 2022",
             description: "Create  Remembering VR Port for Oculus Qeust and HTC Flow, made optimisation to various gameplay element to work on standalone VR headsets",
             link: "https://monobanda.eu/project/rememberingvr",
             additionalLink: "https://www.rememberingthegame.nl/"
-        },{
-            function: "Programmer - Monobanda",
-            date: "mrt 2021 - feb 2022",
-            description: "Worked on Visible Voice as a programmer of various systems and prototyping mechanics. \n Visible Voice is a safe and inviting environment for children and youth dealing with intelligible behaviour, to better cope with feelings of aggression and anxiety",
-            link: "https://monobanda.eu/project/visiblevoice"
         },{
             function: "Coding/Finetuning - Monobanda",
             date: "oct 2020",
