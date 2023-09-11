@@ -5,7 +5,7 @@ var app = new Vue({
         {
             graphic: "fas fa-file-code",
             header: "Programming",
-            description: "Design and create games, installations and systems for you applications. making your vision a reality."
+            description: "Design and create games, installations and systems for your applications. making your vision a reality."
         },{
             graphic: "fas fa-tachometer-alt",
             header: "Optimisation",
