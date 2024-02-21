@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<html lang="en-US" prefix="og: https://ogp.me/ns#">
-    <head>
-        <title>Jesse van Leeuwen | GameDev Portfolio </title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=0.85">  
-
-        <link rel="canonical" href="https://jessevanleeuwen.nl/">        
+		<link rel="canonical" href="https://jessevanleeuwen.nl/">        
         <meta property="og:locale" content="en_US">
         <meta property="og:type" content="website">
         <meta property="og:description" content="The portfolio/cv of Jesse van Leeuwen">
@@ -15,133 +14,132 @@
         <meta property="og:url" content="https://jessevanleeuwen.nl/">
         <meta property="og:site_name" content="Portfolio Jesse van Leeuwen">
 
-        <meta http-equiv="Cache-control" content="public">
-
-        <!--stylesheets -->
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/skeleton.css">
-        <link rel="stylesheet" href="css/animate.css">
-
+		<link rel="stylesheet" href="./css/normalize.css">
+		<link rel="stylesheet" href="./css/skeleton.css">
+		<link rel="stylesheet" href="./css/animate.css">
+		<link rel="stylesheet" href="./css/icons.css">
+		<link rel="stylesheet" href="./css/tooltip.css">
+		
         <!--fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="./css/bespoke-serif.css">
+		<link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
-                integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" 
-                crossorigin="anonymous">
-        <link rel="stylesheet" href="css/devicon.css">
+			integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" 
+			crossorigin="anonymous">
+		<link rel="stylesheet" href="./css/devicon-base.css">
 
-        <!-- page style -->
-        <link rel="stylesheet" href="css/main.css"/>
-        <link rel="stylesheet" href="css/layout.css" media="screen and (min-width: 650px)" /> 
+		<style>
+			html{ scroll-behavior: smooth; }
+
+			h1, h2, h3, h4, h5, h6, strong { font-family: "bespoke-serif"; }
+
+			h1, h2{
+				font-weight: 900;
+			}
+			
+			.section-height{
+     		   min-height: 60vh;
+			}
+
+			.section-margin{
+				margin-top: 2em;
+			}
+			
+			.align-vertical{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.hgroup h1, .hgroup h2 {
+				margin-bottom: 0;
+			}
+
+			.hgroup p{
+				font-weight: 600;
+				margin-bottom: 1em;
+			}
+
+			.footer {
+				margin-top: 3rem;
+
+				grid-area: info;
+				display: grid;
+				align-items: center;
+				justify-items: center;
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-rows: 1fr 1fr
+			}
+			
+			.clr-primary{
+				color: var(--primary);
+			}
+		</style>
+
+		
+		<link href="./_app/immutable/assets/2.8hLlEEp0.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.j0m_034Y.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/entry.BYyIpXWy.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.yvm4x9bg.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.nJi9Hu4V.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.dU6hXdw0.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.ufUodd3A.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.d00DpMvQ.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div class="container" style="min-height: 80svh;">
+			  <header class="u-full-width svelte-1fy2ql3" data-svelte-h="svelte-17hn3ni"><nav class="svelte-1fy2ql3"><div class="brand svelte-1fy2ql3">Jesse van Leeuwen</div> <ul class="svelte-1fy2ql3"><li class="svelte-1fy2ql3"><a href="#about" class="svelte-1fy2ql3">about</a></li> <li class="svelte-1fy2ql3"><a href="#skill" class="svelte-1fy2ql3">skills</a></li> <li class="svelte-1fy2ql3"><a href="#work" class="svelte-1fy2ql3">work</a></li> <li class="svelte-1fy2ql3"><a rel="noreferrer" target="_blank" href="https://github.com/JesseLeeuwen" class="button svelte-1fy2ql3">github</a></li></ul></nav> </header> <section id="#hero" class="hero" data-svelte-h="svelte-15xbxkv"><div class="align-vertical hero-element svelte-1e2at7d"><h1 class="wow bounceIn">I am not <span class="clr-primary">crazy</span> <br> <span class="offset svelte-1e2at7d"></span> I am a <span class="clr-primary">programmer</span></h1> <a class="button button-primary wow bounceIn" aria-label="my linkedin profile" rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/jesse-van-leeuwen-00a90bb6/">Let&#39;s make an impact!</a></div> </section> <section id="about" data-svelte-h="svelte-x0k7j4"><div class="row"><div class="six columns align-vertical section-height"><div class="hgroup"><h2>Who&#39;s Jesse?</h2> <p>a creative</p></div> <p>Hi, my name is Jesse van Leeuwen a game programmer.<br>                
         
-    </head>
-    <body>
-        <main id="app">            
-            <section id="home" class="section">                    
-                <div>
-                    <h3 class="homeCard align-right"> I am not crazy, I am a programmer </h3>
-                    <div class="align-right">
-                        <a href="#home">About</a> 
-                        <a href="#resume">Experience</a>
-                        <a href="#skills">Skills</a>
-                        <a rel="noreferrer" target="_blank" href="https://github.com/JesseLeeuwen">View github</a>
-                    </div>                    
-                </div>
-
-                <img alt="foto of me" id="MyFace" src="images/Jesse_20232.jpg">
-
-                <p class="homeCard">
-                    Hi, my name is Jesse van Leeuwen a game programmer.<br/>                
-
-                    Together with friends, I started a game company 
-                    <a rel="noreferrer" href="https://emberglitch.com">Ember Glitch</a> to work on our own games and stories. 
-                    We are currently working on Bloodbag a game about managing your own lifeforce and the lifeforce of your opponents.
-                    In addition to our projects, we work as freelancers to finance our passion. 
-                    <br/><br/>
-
-                    I started programming so I could work with all kinds of creative people on a wide variety of projects
-                    from entertainment games to interactive game experiences
-                </p>		
-            </section>                       
-
-            <section id="services" class="section">
-                <div class="service wow bounceIn" v-for="service in services">
-                    <i :class="service.graphic"></i>
-                    
-                    <h5> {{service.header}} </h5>
-                    <p> {{service.description}} </p>
-                </div>
-            </section>
-
-            <section id="resume" class="section">
-                <div id="experience">
-                    <!-- work -->
-                    <div><h4> Experience </h4>
-                        <div class="resumeItem work wow fadeInUp" data-wow-duration="0.5s" v-for="xp in workExperience.slice()">
-                            <h6 class="noMargin header">{{xp.function}}</h6>
-                            <label><i class="far fa-calendar-alt dateIcon"></i> {{xp.date}}</label> 
-                            <label v-if="xp.link"> | <a rel="noreferrer" target="_blank" :href="xp.link">web page</a></label>
-                            <label v-if="xp.additionalLink"> | <a rel="noreferrer" target="_blank" :href="xp.additionalLink">additional project info</a></label>
-                            <p>{{xp.description}}</p> 
-                        </div>
-                    </div>                    
-
-                    <!-- education -->      
-                    <div><h4> Education </h4>
-                        <div class="resumeItem education wow fadeInUp" data-wow-duration="0.5s"> 
-                            <h6 class="noMargin header">MBO-4 Game developer - Grafisch Lyceaum Utrecht </h6>
-                            <label><i class="far fa-calendar-alt dateIcon"></i> sept 2013 - jun 2017</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="grid-area: skT; padding-top: 50px;">
-                    <h4 id="skills"> Skills</h4>
-                    <div class="skillSection">
-                        <h6 class="header">Programming</h6>
-                        <ul style="padding-left: 8px;">
-                            <li> Designing and programming (gameplay) systems </li>
-                            <li> Tool development within Unity 3D </li>
-                            <li> Version control (Git: setup & usage, SVN: usage) </li>
-                            <li> Knowledge in agile methodologies (Scrum) </li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="skills1" class="skillSection">	
-                    <h6 class="header">Programming langauges </h6>
-                    <div class="list">
-                        <div class="tooltip wow bounceInLeft" v-for="l in skills.languages">
-                            <i :class="l.icon"></i>
-                            <span class="tooltiptext">{{l.name}}</span>
-                        </div>	
-                    </div>
-                </div>
-                
-                <div id="skills2" class="skillSection ">
-                    <h6 class="header">Tools </h6>
-                    <div class="list">
-                        <div class="tooltip wow bounceInLeft" v-for="l in skills.tools">
-                            <i :class="l.icon"></i>
-                            <span class="tooltiptext">{{l.name}}</span>
-                        </div>
-                    </div>
-                </div>
-            </section> <!-- end resume -->
-            
-            <footer class="footer section">
-                <a aria-label="my twitter profile" rel="noreferrer" target="_blank" href="https://twitter.com/jesseGameDev"><i class="fab fa-twitter"></i></a> 
-                <a rel="noreferrer" href="mailto:jesse@emberglitch.com" class="contact font-heavy"><button class="button-primary">contact</button></a> 
-                <a aria-label="my linkedin profile" rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/jesse-van-leeuwen-00a90bb6/"><i class="fab fa-linkedin-in"></i></a>
-                
-                <small><a rel="noreferrer" target="_blank" href="privacy.html">Privacy Policy</a></small> 
-                <small>Copyright 2023, Jesse van Leeuwen</small> 
-                <small><a rel="noreferrer" target="_blank" href="sitemap.xml"> sitemap </a></small>
-            </footer>
-        </main> <!-- end app -->
+                Together with friends, I started a game company 
+                <a rel="noreferrer" href="https://emberglitch.com">Ember Glitch</a> to work on our own games and stories. 
+                We are currently working on Bloodbag a game about managing your own lifeforce and the lifeforce of your opponents.
+                In addition to our projects, we work as freelancers to finance our passion. 
+                <br><br>
         
-        <script type="text/javascript" src="js/vue.min.js"></script>
-        <script type="text/javascript" src="js/app.js"></script>
-        
-        <script type="text/javascript" src="js/wow.min.js"></script>
-        <script> new WOW().init(); </script>	
-    </body>
+                I started programming so I could work with all kinds of creative people on a wide variety of projects
+                from entertainment games to interactive game experiences</p></div> <div class="six columns align-vertical section-height"><img class="u-full-width svelte-1n28g4p" src="images/jesse_2023.jpg" alt="Jesse van Leeuwen sitting at a table"></div></div> </section> <section id="skill" class="section-margin svelte-1ce9vhe"><div class="hgroup svelte-1ce9vhe" data-svelte-h="svelte-1jvjn92"><h2>What I offer</h2> <p>My creative suite</p></div> <diV class="skills svelte-1ce9vhe"><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="devicon-csharp-plain svelte-1ce9vhe"></i> <span class="tooltiptext">C#</span> </div><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="devicon-cplusplus-plain svelte-1ce9vhe"></i> <span class="tooltiptext">C++</span> </div><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="devicon-javascript-plain svelte-1ce9vhe"></i> <span class="tooltiptext">Javascript</span> </div><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="devicon-html5-plain svelte-1ce9vhe"></i> <span class="tooltiptext">HTML5</span> </div><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="devicon-python-plain svelte-1ce9vhe"></i> <span class="tooltiptext">Python</span> </div><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="devicon-lua-plain svelte-1ce9vhe"></i> <span class="tooltiptext">Lua</span> </div><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="icon-shaders svelte-1ce9vhe"></i> <span class="tooltiptext">Shaders</span> </div><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="devicon-unity-plain svelte-1ce9vhe"></i> <span class="tooltiptext">Unity3D</span> </div><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="devicon-dot-net-plain svelte-1ce9vhe"></i> <span class="tooltiptext">Dot-net</span> </div><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="devicon-unrealengine-original svelte-1ce9vhe"></i> <span class="tooltiptext">Unreal</span> </div><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="devicon-blender-original svelte-1ce9vhe"></i> <span class="tooltiptext">Blender</span> </div><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="devicon-git-plain svelte-1ce9vhe"></i> <span class="tooltiptext">Git</span> </div><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="devicon-trello-plain svelte-1ce9vhe"></i> <span class="tooltiptext">Trello</span> </div><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="devicon-mongodb-plain svelte-1ce9vhe"></i> <span class="tooltiptext">Mongodb</span> </div><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="devicon-django-plain svelte-1ce9vhe"></i> <span class="tooltiptext">Django</span> </div><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="devicon-nodejs-plain svelte-1ce9vhe"></i> <span class="tooltiptext">Nodejs</span> </div><div class="skill tooltip wow bounceIn svelte-1ce9vhe"><i class="devicon-arduino-plain svelte-1ce9vhe"></i> <span class="tooltiptext">arduino</span> </div></diV></section> <section id="work" class="experiences section-margin svelte-1ce9vhe"><div class="hgroup svelte-1ce9vhe" data-svelte-h="svelte-ldcbjw"><h2>My Journey</h2> <p>exciting projects I was a part off</p></div> <div role="listitem" class="experience svelte-1qzsnqc"><p class="date svelte-1qzsnqc"><i class="fas fa-briefcase svelte-1qzsnqc"></i> oct 2017 - present</p> <h5 class="svelte-1qzsnqc">Game programmer / co-founder - Ember Glitch</h5> <div class="content svelte-1qzsnqc"><p class="description svelte-1qzsnqc">Work as the lead programmer / founder and as a freelance gameplay programmer on various projects</p> <a class="button button-secondary" target="_blank" rel="noreferrer" href="https://emberglitch.com">Ember Glitch</a> </div> </div><div role="listitem" class="experience svelte-1qzsnqc"><p class="date svelte-1qzsnqc"><i class="fas fa-briefcase svelte-1qzsnqc"></i> mei 2023 - present</p> <h5 class="svelte-1qzsnqc">programmer / Studio Harm Hasenaar</h5> <div class="content svelte-1qzsnqc"><p class="description svelte-1qzsnqc">Programmer on various projects for the studio and support the other programmers</p> <a class="button button-secondary" target="_blank" rel="noreferrer" href="https://studioharmhasenaar.nl">Studio Harm Hasenaar</a> </div> </div><div role="listitem" class="experience svelte-1qzsnqc"><p class="date svelte-1qzsnqc"><i class="fas fa-briefcase svelte-1qzsnqc"></i> mrt 2021 - present</p> <h5 class="svelte-1qzsnqc">Programmer - Monobanda</h5> <div class="content svelte-1qzsnqc"><p class="description svelte-1qzsnqc">Worked on Visible Voice as a programmer of various systems and prototyping mechanics. 
+ Visible Voice is a safe and inviting environment for children and youth dealing with intelligible behaviour, to better cope with feelings of aggression and anxiety</p> <a class="button button-secondary" target="_blank" rel="noreferrer" href="https://monobanda.eu/project/visiblevoice">project page</a> </div> </div><div role="listitem" class="experience svelte-1qzsnqc"><p class="date svelte-1qzsnqc"><i class="fas fa-briefcase svelte-1qzsnqc"></i> sept 2021 - mrt 2022</p> <h5 class="svelte-1qzsnqc">Porting/Optimalisation - Monobanda</h5> <div class="content svelte-1qzsnqc"><p class="description svelte-1qzsnqc">Create  Remembering VR Port for Oculus Qeust and HTC Flow, made optimisation to various gameplay element to work on standalone VR headsets</p> <a class="button button-secondary" target="_blank" rel="noreferrer" href="https://monobanda.eu/project/rememberingvr">project page</a> <a class="button button-secondary" target="_blank" rel="noreferrer" href="https://www.rememberingthegame.nl/">remembering website</a></div> </div><div role="listitem" class="experience svelte-1qzsnqc"><p class="date svelte-1qzsnqc"><i class="fas fa-briefcase svelte-1qzsnqc"></i> oct 2020</p> <h5 class="svelte-1qzsnqc">Coding/Finetuning - Monobanda</h5> <div class="content svelte-1qzsnqc"><p class="description svelte-1qzsnqc">Created game mechanics and assisted with implementing existing game mechanics for an interactive VR story The Shape of Us</p> <a class="button button-secondary" target="_blank" rel="noreferrer" href="https://monobanda.eu/project/shapeofus">project page</a> <a class="button button-secondary" target="_blank" rel="noreferrer" href="https://www.heartwire.org/cases/theshapeofus">project website</a></div> </div><div role="listitem" class="experience svelte-1qzsnqc"><p class="date svelte-1qzsnqc"><i class="fas fa-briefcase svelte-1qzsnqc"></i> dec 2017 - apr 2018</p> <h5 class="svelte-1qzsnqc">Game programmer - Monobanda</h5> <div class="content svelte-1qzsnqc"><p class="description svelte-1qzsnqc">worked as Game programmer on Timbre in de klas. 
+My function was to create the game mechanics and voice interactions</p> <a class="button button-secondary" target="_blank" rel="noreferrer" href="http://monobanda.eu/project/timbreclass">project page</a> </div> </div><div role="listitem" class="experience svelte-1qzsnqc"><p class="date svelte-1qzsnqc"><i class="fas fa-briefcase svelte-1qzsnqc"></i> dec 2016 - jun 2017</p> <h5 class="svelte-1qzsnqc">Game programmer - Monobanda</h5> <div class="content svelte-1qzsnqc"><p class="description svelte-1qzsnqc">Timbre VR, Researched possible interaction with voice control</p> <a class="button button-secondary" target="_blank" rel="noreferrer" href="http://monobanda.eu/project/timbre">project page</a> </div> </div><div role="listitem" class="experience svelte-1qzsnqc"><p class="date svelte-1qzsnqc"><i class="fas fa-graduation-cap svelte-1qzsnqc"></i> sept 2016 - dec 2016</p> <h5 class="svelte-1qzsnqc">(Internship) game programmer - Monobanda</h5> <div class="content svelte-1qzsnqc"><p class="description svelte-1qzsnqc">during my interschip I worked as a Gameplay programmer on Weltatem VR</p> <a class="button button-secondary" target="_blank" rel="noreferrer" href="https://wildvreemd.com/projects/weltatem">project website</a> </div> </div><div role="listitem" class="experience svelte-1qzsnqc"><p class="date svelte-1qzsnqc"><i class="fas fa-graduation-cap svelte-1qzsnqc"></i> feb 2016 - jun 2016</p> <h5 class="svelte-1qzsnqc">(Internship) game programmer - Hibernate studios</h5> <div class="content svelte-1qzsnqc"><p class="description svelte-1qzsnqc">during my interschip I worked on Rumble Run's UI and server backend</p> <a class="button button-secondary" target="_blank" rel="noreferrer" href="https://hibernatestudios.com">Hibernate Studios</a> </div> </div> </section> 
+			
+			<script>
+				{
+					__sveltekit_iyqevk = {
+						base: new URL(".", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,{"type":"data","data":null,"uses":{}}];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.j0m_034Y.js"),
+						import("./_app/immutable/entry/app.nJi9Hu4V.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		
+		</div>
+
+		<footer class="footer container">
+			<a aria-label="my twitter profile" rel="noreferrer" target="_blank" href="https://twitter.com/jesseGameDev"><i class="fab fa-twitter"></i></a> 
+			<a rel="noreferrer" href="mailto:jesse@emberglitch.com" class="contact font-heavy"><button class="button-primary">contact</button></a> 
+			<a aria-label="my linkedin profile" rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/jesse-van-leeuwen-00a90bb6/"><i class="fab fa-linkedin-in"></i></a>
+			
+			<small><a rel="noreferrer" target="_blank" href="privacy.html">Privacy Policy</a></small> 
+			<small>Copyright 2024, Jesse van Leeuwen</small> 
+			<small><a rel="noreferrer" target="_blank" href="sitemap.xml"> sitemap </a></small>
+		</footer>
+
+
+		<!-- scripts -->
+		<script type="text/javascript" src="js/wow.min.js"></script>
+       	<script> new WOW().init(); </script>
+	</body>
 </html>
