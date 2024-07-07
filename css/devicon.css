@@ -7,7 +7,7 @@
 		url('fonts/devicon.svg?-hdf3wh#devicon') format('svg');
 	font-weight: normal;
 	font-style: normal;
-	font-display: auto;
+	font-display: swap;
 }
 
 [class^="devicon-"], [class*=" devicon-"] {
